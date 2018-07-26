@@ -5,6 +5,8 @@ from elasticsearch import Elasticsearch
 from SPARQLWrapper import SPARQLWrapper, JSON
 import sys
 
+import simplejson as json
+
 reload(sys)
 sys.setdefaultencoding('utf8')
 
@@ -34,7 +36,8 @@ def roomnumber (uri):
 	    sys.exit(1)
 	else:
 		print "The room is " + results["results"]["bindings"][0]["x"]["value"]
-
+		json_results=  json.dumps(results,separators=(',',':'),sort_keys=True) #results to json
+		print json_results
 
 es = Elasticsearch()
 userSearch = raw_input("What is the room of ")
