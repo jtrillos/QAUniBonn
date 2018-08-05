@@ -17,17 +17,19 @@ indexName = "kommunikationsroboter"
 docTypeName = "robot"
 
 def roomnumber (uri):
-	query = """
-		PREFIX sda: <http://beta.sda.tech/schema/> 
+	query ="""
+		PREFIX sda: <http://beta.sda.tech/schema/>
 		PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
-		SELECT ?x 
-		WHERE { 
-			<%s>  a foaf:Person; 
+		SELECT ?x
+		WHERE {
+
+			<%s>  a foaf:Person;
 			sda:room ?x.
 		  
 		}
-	""" % uri["hits"]["hits"][0]["_source"]["uri"]
+	"""% uri["hits"]["hits"][0]["_source"]["uri"]
+
 	sparql.setQuery(query)
 	sparql.setReturnFormat(JSON)
 	results = sparql.query().convert()

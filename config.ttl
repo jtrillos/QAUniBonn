@@ -18,7 +18,7 @@
     fuseki:dataset                   :tdb_dataset_readwrite .
 
 :tdb_dataset_readwrite rdf:type      tdb:DatasetTDB ;
-    tdb:location "/path/to/the/repository/QAUniBonn/TripleStore/" ;
+    tdb:location "/home/o/Documents/QAUniBonn/TripleStore/" ;
     # Query timeout on this dataset (1s, 1000 milliseconds)
     ja:context [ ja:cxtName "arq:queryTimeout" ;  ja:cxtValue "1000" ] ;
     # Make the default graph be the union of all named graphs.
