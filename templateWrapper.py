@@ -41,4 +41,6 @@ def getTemplateVectors():
         return templateMatrix
 
 
-
+if __name__ =='  main  ':
+    vectors = getTemplateVectors()
+    
