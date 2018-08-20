@@ -1,8 +1,8 @@
 import numpy as np
 import pandas
 from gensim.models import FastText
-path_to_data = '/data/nikolskyy'
-model = FastText.load_fasttext_format(path_to_data+'wiki.de.bin')
+path_to_data = '/data/nikolskyy/'
+model = FastText.load_fasttext_format(path_to_data+'wiki.en.bin')
 
 
 
@@ -11,7 +11,6 @@ def get_word_embedding(word):
 
 def getQuestionVector(question):
     words=question.split()
-    #print words
     numberWords=len(words)
     questionVector=np.zeros(300)
     for word in words:
@@ -27,20 +26,22 @@ def getTemplateVectors():
         templatesList = []
         templates = []
 
-        with open('questions.txt') as f:
-            content = f.readlines()
+        with open('data/templates.txt') as f:
+             content = f.readlines()
+
+        i=0
+
         # you may also want to remove whitespace characters like `\n` at the end of each line
         content = [x.strip() for x in content]
         for question in range(len(content)):
-            templates.append(question)
+            templates.append(content[question])
             i = i + 1
-            questionVector = getQuestionVector(question)
+            questionVector = getQuestionVector(content[question])
+            print(questionVector)
             templatesList.append(questionVector)
         templateMatrix = np.array(templatesList)
         np.save('templatesMatrix', templateMatrix)
         return templateMatrix
 
 
-if __name__ =='  main  ':
-    vectors = getTemplateVectors()
-    
+vectors = getTemplateVectors()
