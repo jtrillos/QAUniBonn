@@ -15,7 +15,10 @@
 	- The server starts at `http://localhost:3030/`
 - Create a virtual environment for Python 2.7 ```$ virtualenv pythenv --python=python2  ```
 	- Run the virtual environment ```$ source pythenv/bin/activate```
-	- Install the dependencies ```$ pip install elasticsearch ``` and ```$ pip install SPARQLWrapper ```
+	- Install the dependencies ```$ pip install elasticsearch SPARQLWrapper simplejson gensim pandas```
 - Go to the folder ESEntitiesExtraction
 	- Run ```$ python IndexSDAKG.py ``` to import all the entities and labels of the KG to ElasticSearch (This is needed only when the KG is being updated or it is the first time).
 	- Run ```$ python searchSDAES.py ``` to search and get a response 
+- Download [wiki-en.bin fasttext](https://s3-us-west-1.amazonaws.com/fasttext-vectors/wiki.en.zip)
+- Go to templateWrapper.py and modify the path in line 4
+- Run ```$ python templateWrapper.py ```
