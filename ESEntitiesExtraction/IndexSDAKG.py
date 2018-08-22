@@ -9,12 +9,12 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 # using directly the endpoint to query
-sparql = SPARQLWrapper("http://localhost:3030/kommunikationsroboter/sparql")
+sparql = SPARQLWrapper("http://fuseki:3030/kommunikationsroboter/sparql")
 
 indexName = "kommunikationsroboter"
 docTypeName = "robot"
 
-es = Elasticsearch()
+es = Elasticsearch([{'host': 'elasticsearch', 'port': 9200}])
 
 print "Wiping any existing index..."
 es.indices.delete(index=indexName, ignore=[400, 404])

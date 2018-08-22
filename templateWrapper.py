@@ -1,7 +1,7 @@
 import numpy as np
 import pandas
 from gensim.models import FastText
-path_to_data = '/data/nikolskyy/'
+path_to_data = '/QAUniBonn/wiki_en/'
 model = FastText.load_fasttext_format(path_to_data+'wiki.en.bin')
 
 
@@ -40,7 +40,7 @@ def getTemplateVectors():
             print(questionVector)
             templatesList.append(questionVector)
         templateMatrix = np.array(templatesList)
-        np.save('templatesMatrix', templateMatrix)
+        np.save('data/templatesMatrix', templateMatrix)
         return templateMatrix
 
 
