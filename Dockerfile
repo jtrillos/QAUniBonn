@@ -3,7 +3,7 @@ FROM python:2.7
 RUN pip install elasticsearch SPARQLWrapper simplejson gensim pandas flask
 
 # Install fuseki
-RUN apt-get install -y ruby-full
+RUN apt-get update && apt-get install -y ruby-full
 WORKDIR /
 RUN wget http://archive.apache.org/dist/jena/binaries/apache-jena-fuseki-3.4.0.zip
 RUN unzip apache-jena-fuseki-3.4.0.zip && rm apache-jena-fuseki-3.4.0.zip
