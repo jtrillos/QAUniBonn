@@ -12,7 +12,7 @@ RUN chmod +x apache-jena-fuseki-3.4.0/bin/s-*
 # Copy files
 WORKDIR /QAUniBonn
 ADD . /QAUniBonn
-RUN rm -rf dir fuseki
+RUN rm -rf fuseki
 RUN mkdir /wiki_en
 
 #Download wiki.en
