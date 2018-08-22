@@ -1,15 +1,5 @@
-FROM java:8
+FROM python:2.7
 
-# Install vim
-RUN ["apt-get", "update"]
-RUN ["apt-get", "install", "-y", "vim"]
-
-# Install python
-RUN apt-get update \
-  && apt-get install -y python-pip python-dev \
-  && cd /usr/local/bin \
-  && ln -s /usr/bin/python python \
-  && pip install --upgrade pip 
 RUN pip install elasticsearch SPARQLWrapper simplejson gensim pandas flask
 
 # Install fuseki
@@ -22,6 +12,8 @@ RUN chmod +x apache-jena-fuseki-3.4.0/bin/s-*
 # Copy files
 WORKDIR /QAUniBonn
 ADD . /QAUniBonn
+RUN rm -rf dir fuseki
+RUN mkdir /wiki_en
 
 #Download wiki.en
 WORKDIR /QAUniBonn/wiki_en
