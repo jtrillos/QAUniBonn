@@ -17,9 +17,8 @@
 - Create a virtual environment for Python 2.7 ```$ virtualenv pythenv --python=python2  ```
 	- Run the virtual environment ```$ source pythenv/bin/activate```
 	- Install the dependencies ```$ pip install elasticsearch SPARQLWrapper simplejson gensim pandas flask```
-- Go to the folder ESEntitiesExtraction
-	- Run ```$ python IndexSDAKG.py ``` to import all the entities and labels of the KG to ElasticSearch (This is needed only when the KG is being updated or it is the first time).
-	- Run ```$ python searchSDAES.py ``` to search and get a response 
+- Run ```$ python IndexSDAKG.py ``` to import all the entities and labels of the KG to ElasticSearch (This is needed only when the KG is being updated or it is the first time).
+- Run ```$ python searchSDAES.py ``` to search and get a response 
 - Download [wiki-en.bin fasttext](https://s3-us-west-1.amazonaws.com/fasttext-vectors/wiki.en.zip)
 - Go to templateWrapper.py and modify the path in line 4
 - Run ```$ python templateWrapper.py ```
@@ -30,17 +29,24 @@
 
 ## Steps of installation
 - Download or clone the repository ```$ git clone https://github.com/jtrillos/QAUniBonn.git ```
-- Start Jena Fuseki, ElasticSearch and QAUniBonn in separate docker containers using docker-compose:
-```$ docker-compose up ```
-- Run the bash for indexing the entities with their labels to ElasticSearch
-```$ sh initQA.sh ```
 
-# Tests:
-## Test QA
-```$ sh testQA.sh ```
+## Start Fuseki Server Docker
+- Pull Docker Fuseki Server 
+```sh
+$ docker pull stain/jena-fuseki
+```
+- Copy the folder Fuseki_TripleStore in the server
+- Run Docker Fuseki Server (Remember to change the path where Fuseki_TripleStore is stored)
+```sh
+$ docker run -d --name qaunibonn_fuseki -p 3030:3030 -e ADMIN_PASSWORD=robot -v /path/to/Fuseki_TripleStore/:/fuseki/ -it stain/jena-fuseki
+```
 
-## Test TemplateWrapper
-```$ sh templateQA.sh ```
-
-## Test API
-Visit http://localhost:5000/todo/api/v1.0/tasks
+## Start ElasticSearch Server Docker
+- Pull Docker Fuseki Server 
+```sh
+$ docker pull docker.elastic.co/elasticsearch/elasticsearch:6.3.2
+```
+- Run Docker ElasticSearch Server
+```sh
+$ docker run -d  --name elasticsearch -p 9200:9200 -e transport.host=0.0.0.0 -e cluster.name=elasticsearch -e http.host=0.0.0.0 -e xpack.security.enabled=false -it docker.elastic.co/elasticsearch/elasticsearch:6.3.2
+```
