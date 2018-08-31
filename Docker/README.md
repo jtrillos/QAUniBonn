@@ -21,5 +21,5 @@ $ docker pull docker.elastic.co/elasticsearch/elasticsearch:6.3.2
 
 - Run Docker ElasticSearch Server
 ```sh
-$ docker run -d  --name elasticsearch -p 9200:9200 -e transport.host=0.0.0.0 -e cluster.name=elasticsearch -e http.host=0.0.0.0 -e xpack.security.enabled=false -it docker.elastic.co/elasticsearch/elasticsearch:6.3.2
+$ docker run -d  --name elasticsearch -e transport.host=0.0.0.0 -e cluster.name=elasticsearch -e http.host=0.0.0.0 -e xpack.security.enabled=false -it docker.elastic.co/elasticsearch/elasticsearch:6.3.2
 ```

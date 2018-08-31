@@ -15,5 +15,5 @@ def get_vec(question):
     return str(question)
 
 if __name__ == '__main__':
-	model = FastText.load_fasttext_format('data/wiki.de.bin')
-	app.run(debug=True, host='0.0.0.0')
+	model = FastText.load_fasttext_format('wiki_en/wiki.en.bin')
+	app.run(debug=True, host='0.0.0.0', port=8000)
