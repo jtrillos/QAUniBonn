@@ -45,6 +45,7 @@
    #sda:twitter "https://twitter.com/SDA_Research" ;
    foaf:homepage <http://sda.tech/> ;
    dcat:keyword "SDA" ;
+   ex:description "Smart Data Analytics Research Group" ;
    swpo:hasLeader sdaperson:JensLehmann;.
 
 
