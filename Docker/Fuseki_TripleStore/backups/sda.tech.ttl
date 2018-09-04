@@ -34,8 +34,6 @@
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix biboDegree: <http://purl.org/ontology/bibo/degree/> .
 @prefix dbo: <http://dbpedia.org/ontology/> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix swpo: <http://sw-portal.deri.org/ontologies/swportal#> .
 
 
 #######################################
@@ -45,7 +43,9 @@
 <> a owl:Ontology, void:Dataset ;
    rdfs:label "beta.sda.tech Smart Data Analytics Research Group" ;
    #sda:twitter "https://twitter.com/SDA_Research" ;
-   foaf:homepage <http://sda.tech/> .
+   foaf:homepage <http://sda.tech/> ;
+   dcat:keyword "SDA" ;
+   swpo:hasLeader sdaperson:JensLehmann;.
 
 
 
@@ -60,13 +60,13 @@ sdaperson:JensLehmann a foaf:Person, sdatech:professor ;
                   rdfs:seeAlso <http://aksw.org/JensLehmann> ;
                   owl:sameAs <http://aksw.org/JensLehmann> ;
                   sda:publicationsTag "lehmann" ;
-                  sda:room "1.022" ;
+                  ex:address sda:Room22, sda:Roomc1, sda:Roomp631 ;
                   foaf:familyName "Lehmann" ;
                   foaf:name "Prof. Dr. Jens Lehmann" ;
                   foaf:nick "Lehmann" ;
                   foaf:mbox <mailto:jens.lehman@cs.uni-bonn.de> ;
                   foaf:depiction <http://jens-lehmann.org/images/passbild_lehmann.jpg> ;
-                  foaf:phone <tel:+49-341-123456789> ;
+                  foaf:phone <Tel:+49-341-123456789> ;
                   foaf:firstName "Jens" ;
                   foaf:title "Prof. Dr." ;
                   foaf:status "Head of Department" ;
@@ -74,10 +74,9 @@ sdaperson:JensLehmann a foaf:Person, sdatech:professor ;
                   sda:website "http://jens-lehmann.org/" ;
                   sda:twitter "https://twitter.com/JLehmann82" ;
                   ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                  schema:location <http://sda.tech/Address/SDA> ;
                   cv:aboutPerson "Prof. Dr. Jens Lehmann (<a href='http://jens-lehmann.org/'>http://www.jens-lehmann.org</a>) is a full professor at the University of Bonn and Fraunhofer IAIS. He is leading the SDA group with 50 researchers. He obtained a PhD with grade summa cum laude at the University of Leipzig in 2010 including research stays at the University of Oxford and a master degree in Computer Science from Technical University of Dresden in 2006. His research interests involve Semantic Web and Artificial Intelligence. He is founder, leader or contributor of several open source projects, including SANSA, AskNow, DL-Learner, DBpedia, LinkedGeoData and ORE. He works/worked in several funded projects, e.g. GeoKnow (EU STREP, coordinator), LOD2 (EU IP, work package lead), LATC (EU STREP, lead for University of Leipzig) and SoftWiki (BmBF). Prof. Dr. Jens Lehmann authored more than 100 articles in international journals and conferences cited more than 11000 times according to Google Scholar." ;
                   sda:publication sdapublication:Publication1 ;
-                  sda:group sdagroup:SemanticQuestionAnswering, sdagroup:DistributedSemanticAnalytics, sdagroup:SmartServices ;
+                  sda:group sdagroup:SemanticQuestionAnswering, sdagroup:DistributedSemanticAnalytics, sdagroup:SmartServices, sdagroup:KnowledgeGraph ;
                   foaf:currentProject sdaproject:BigDataEurope, sdaproject:Boost40, sdaproject:SANSAStack, sdaproject:DLLearner, sdaproject:AskNow, sdaproject:SMLBench, sdaproject:SLIPO, sdaproject:QROWD, sdaproject:HOBBIT, sdaproject:WDAqua .
 
 ##############################Senior Researchers#########################
@@ -85,18 +84,17 @@ sdaperson:HajiraJabeen a foaf:Person, sdatech:seniorResearcher ;
                   rdfs:seeAlso <http://aksw.org/HajiraJabeen> ;
                   owl:sameAs <http://aksw.org/HajiraJabeen> ;
                   sda:publicationsTag "jabeen" ;
-                  sda:room "1.066" ;
+                  ex:address sda:Room66 ;
                   foaf:firstName "Hajira" ;
                   foaf:familyName "Jabeen" ;
                   foaf:name "Dr. Hajira Jabeen" ;
                   foaf:mbox <mailto:jabeen@cs.uni-bonn.de> ;
                   foaf:depiction <https://scholar.google.de/citations?view_op=view_photo&user=52Q9BbMAAAAJ&citpid=1> ;
-                  foaf:phone <tel:+49-341-123456789> ;
+                  foaf:phone <Tel:+49-341-123456789> ;
                   foaf:title "Dr. " ;
                   foaf:status "Senior Researcher" ;
                   sda:linkedin "https://de.linkedin.com/in/hajirajabeen" ;
                   ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                  schema:location <http://sda.tech/Address/SDA> ;
                   cv:aboutPerson "Dr. Hajira Jabeen is a Senior Researcher at the University of Bonn." ;
                   #sda:publication sdapublication:Publication1 ;
                   sda:group sdagroup:DistributedSemanticAnalytics ;
@@ -104,54 +102,33 @@ sdaperson:HajiraJabeen a foaf:Person, sdatech:seniorResearcher ;
 
 sdaperson:GuenterKniesel a foaf:Person, sdatech:seniorResearcher ;
                   sda:publicationsTag "kniesel" ;
-                  sda:room "1.065" ;
+                  ex:address sda:Room65 ;
                   foaf:firstName "Günter" ;
                   foaf:familyName "Kniesel" ;
                   foaf:name "Dr. Günter Kniesel" ;
                   foaf:mbox <mailto:gk@cs.uni-bonn.de> ;
-                  foaf:depiction <https://media.licdn.com/dms/image/C5603AQE26EAln8i5GA/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=yFi-6QAokhieWAaTy2q1ppUj41iidf7yDyfCJfPojRY> ;
+                  foaf:depiction <https://media.licdn.com/dms/image/C5603AQE26EAln8i5GA/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=6Ev9m7GY0I2-62waUWPZm4IH2iGGvQ7wkoGZm21Sg4I> ;
                   foaf:title "Dr. " ;
                   foaf:status "Senior lecturer" ;
                   sda:linkedin "https://www.linkedin.com/in/kniesel/" ;
                   ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                  schema:location <http://sda.tech/Address/SDA> ;
                   cv:aboutPerson "Dr. Günter Kniesel is a Senior lecturer at the University of Bonn." ;
                   #sda:publication sdapublication:Publication1 ;
                   sda:group sdagroup:SoftwareEngineeringforDataScience .
 
-sdaperson:AsjaFischer a foaf:Person, sdatech:seniorResearcher ;
-                  sda:publicationsTag "fischer" ;
-                  sda:room "1.065" ;
-                  foaf:firstName "Asja" ;
-                  foaf:familyName "Fischer" ;
-                  foaf:name "Dr. Asja Fischer" ;
-                  foaf:mbox <mailto:asja.fischer@gmail.com> ;
-                  foaf:depiction <https://media.licdn.com/dms/image/C4E03AQGT__IVsAnjMw/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=k9th744qk8cy2ql4BKcyegvl-bkHAezdyn0rheRXO8Q> ;
-                  foaf:phone <tel:+49-341-123456789> ;
-                  foaf:title "Dr. " ;
-                  foaf:status "Senior Researcher" ;
-                  sda:linkedin "https://www.linkedin.com/in/asja-fischer-32007a94" ;
-                  ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                  schema:location <http://sda.tech/Address/SDA> ;
-                  cv:aboutPerson "Dr. Asja Fischer is a Senior Researcher at the University of Bonn." .
-                  #sda:publication sdapublication:Publication1 ;
-                  #sda:group sdagroup:DeepLearning .
-                  #foaf:currentProject sdaproject: .
-
 sdaperson:MariaMaleshkova a foaf:Person, sdatech:seniorResearcher ;
                   sda:publicationsTag "maleshkova" ;
-                  sda:room "1.065" ;
+                  ex:address sda:Room65 ;
                   foaf:firstName "Maria" ;
                   foaf:familyName "Maleshkova" ;
                   foaf:name "Dr. Maria Maleshkova" ;
                   foaf:mbox <mailto:maria.maleshkova@cs.uni-bonn.de> ;
-                  foaf:depiction <https://media.licdn.com/dms/image/C4E03AQEve-K3TKlCTg/profile-displayphoto-shrink_800_800/0?e=1531958400&v=beta&t=YFrlE8qfWn3XZdDjghTtazXfRd9DpTQCK9PHf0LFvAI> ;
-                  foaf:phone <tel:+49-341-123456789> ;
+                  foaf:depiction <https://media.licdn.com/dms/image/C4E03AQEve-K3TKlCTg/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=a-X35agG_NLO6TSSJZaPmSXD7SoDqiA-8gy8b31qDwI> ;
+                  foaf:phone <Tel:+49-341-123456789> ;
                   foaf:title "Dr. " ;
                   foaf:status "Assistant Professor (Akademische Rätin)" ;
                   sda:linkedin "https://www.linkedin.com/in/maleshkova/" ;
                   ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                  schema:location <http://sda.tech/Address/SDA> ;
                   cv:aboutPerson "Dr. Maria Maleshkova is an Assistant Professor at the Computer Science Department III of the University of Bonn. Before, she was a postdoctoral researcher at the Karlsruhe Service Research Institute (KSRI) and the Institute of Applied Informatics and Formal Description Methods (AIFB) at the Karlsruhe Institute of Technology. Her research work covers the Web of Things (WoT) and semantics-based data integration topics as well as work in the area of the semantic description of Web APIs, RESTful services and their joint use with Linked Data. Prior to that, she was a Research Associate and a PhD student at the Knowledge Media Institute (KMi) at the Open University, where she worked on projects in the domain of SOA and Web Services." ;
                   #sda:publication sdapublication:Publication1 ;
                   sda:group sdagroup:SmartServices ;
@@ -159,18 +136,17 @@ sdaperson:MariaMaleshkova a foaf:Person, sdatech:seniorResearcher ;
 
 sdaperson:AlexanderKister a foaf:Person, sdatech:seniorResearcher ;
                   sda:publicationsTag "kister" ;
-                  sda:room "A108" ;
+                  ex:address sda:RoomA108 ;
                   foaf:firstName "Alexander" ;
                   foaf:familyName "Kister" ;
                   foaf:name "Dr. Alexander Kister" ;
                   foaf:mbox <mailto:Alexander.Kister@iais.fraunhofer.de> ;
                   foaf:depiction <http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png> ;
-                  foaf:phone <tel:+49-341-123456789> ;
+                  foaf:phone <Tel:+49-341-123456789> ;
                   foaf:title "Dr. " ;
                   foaf:status "Senior Researcher" ;
                   #sda:linkedin "" ;
                   ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                  schema:location <http://sda.tech/Address/SDA> ;
                   cv:aboutPerson "Dr. Alexander Kister is a Senior Researcher at the Fraunhofer IAIS." ;
                   #sda:publication sdapublication:Publication1 ;
                   sda:group sdagroup:SmartServices .
@@ -178,77 +154,53 @@ sdaperson:AlexanderKister a foaf:Person, sdatech:seniorResearcher ;
 
 sdaperson:HamedShariatYazdi a foaf:Person, sdatech:seniorResearcher ;
                   sda:publicationsTag "yazdi" ;
-                  sda:room "1.066" ;
+                  ex:address sda:Room66 ;
                   foaf:firstName "Hamed" ;
                   foaf:familyName "Shariat Yazdi" ;
                   foaf:name "Dr. Hamed Shariat Yazdi" ;
                   foaf:mbox <mailto:shariat@cs.uni-bonn.de> ;
-                  foaf:depiction <https://media.licdn.com/dms/image/C4D03AQFNL_0RUQn3dQ/profile-displayphoto-shrink_200_200/0?e=1534377600&v=beta&t=dRuEGQFNR3dkPbZM8QB1v5d5uewhQz9AVLuDeL1i5z4> ;
-                  foaf:phone <tel:+49-341-123456789> ;
+                  foaf:depiction <http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png> ;
+                  foaf:phone <Tel:+49-341-123456789> ;
                   foaf:title "Dr. " ;
                   foaf:status "Senior Researcher" ;
                   sda:linkedin "https://www.linkedin.com/in/hamed-shariat-yazdi-phd-5aa70182/" ;
                   ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                  schema:location <http://sda.tech/Address/SDA> ;
                   cv:aboutPerson "Dr. Hamed Shariat Yazdi is a Senior Researcher at the University of Bonn." ;
                   #sda:publication sdapublication:Publication1 ;
-                  sda:group sdagroup:SoftwareEngineeringForDataScience .
-                  #foaf:currentProject sdaproject: .
-
-sdaperson:LuisPauloGarcia a foaf:Person, sdatech:seniorResearcher ;
-                  rdfs:seeAlso <http://aksw.org/LuisGarcia> ;
-                  owl:sameAs <http://aksw.org/LuisGarcia> ;
-                  sda:publicationsTag "garcia" ;
-                  sda:room "A108" ;
-                  foaf:firstName "Luís" ;
-                  foaf:familyName "Paulo Garcia" ;
-                  foaf:name "Dr. Luís Paulo Garcia" ;
-                  foaf:mbox <mailto:shariat@cs.uni-bonn.de> ;
-                  foaf:depiction <http://ldap.aksw.org/pic/sn/Faina%20Garcia> ;
-                  foaf:phone <tel:+49-341-123456789> ;
-                  foaf:title "Dr. " ;
-                  foaf:status "Senior Researcher" ;
-                  #sda:linkedin "" ;
-                  ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                  schema:location <http://sda.tech/Address/SDA> ;
-                  cv:aboutPerson "Dr. Luís Paulo Garcia is a Senior Researcher at the University of Leipzig." ;
-                  #sda:publication sdapublication:Publication1 ;
-                  sda:group sdagroup:SoftwareEngineeringForDataScience .
+                  sda:group sdagroup:KnowledgeGraph .
                   #foaf:currentProject sdaproject: .
 
 sdaperson:GiulioNapolitano a foaf:Person, sdatech:seniorResearcher ;
                   sda:publicationsTag "napolitano" ;
-                  sda:room "C-306" ;
+                  ex:address sda:RoomB3236 ;
                   foaf:firstName "Giulio" ;
                   foaf:familyName "Napolitano" ;
                   foaf:name "Dr. Giulio Napolitano" ;
-                  foaf:mbox <mailto:shariat@cs.uni-bonn.de> ;
+                  foaf:mbox <mailto:giulio.napolitano@iais.fraunhofer.de> ;
                   foaf:depiction <https://scholar.google.com/citations?view_op=view_photo&user=H0pe9pgAAAAJ&citpid=2> ;
-                  foaf:phone <tel:+49-341-123456789> ;
+                  foaf:phone <Tel:+49-341-123456789> ;
                   foaf:title "Dr. " ;
                   foaf:status "Senior Researcher" ;
-                  #sda:linkedin "" ;
+                  sda:linkedin "https://www.linkedin.com/in/giulio-napolitano-8a550210/" ;
+                  sda:twitter "https://twitter.com/giulionapo" ;
                   ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                  schema:location <http://sda.tech/Address/SDA> ;
-                  cv:aboutPerson "Dr. Giulio Napolitano is a Senior Researcher at the Fraunhofer IAIS." ;
+                  cv:aboutPerson "Giulio is a senior researcher and team leader at Fraunhofer IAIS and UniBonn SDA. Prior to joining Fraunhofer, he was a senior scientist at Bonn University Clinic (Institut für Medizinische Biometrie, Informatik und Epidemiologie. Before he moved to Bonn, he was a researcher and senior IM&T Officer at the Centre for Public Health, Queen’s University Belfast. Previously, he had been working for Siemens Medical Solutions in Rome. His current interests include semantic technologies, question answering, natural language processing and analysis and machine learning. More broadly, his research interests span from philosophy of science and epistemology to mathematical modelling for medicine, medical informatics and epidemiology. Among other things, he studied Philosophy, Physics and Astrophysics, Bioinformatics and Applied Mathematics." ;
                   #sda:publication sdapublication:Publication1 ;
                   sda:group sdagroup:SemanticQuestionAnswering ;
                   foaf:currentProject sdaproject:AskNow, sdaproject:HOBBIT .
 
 sdaperson:AnisaRula a foaf:Person, sdatech:seniorResearcher ;
                   sda:publicationsTag "rula" ;
-                  #sda:room "C-306" ;
                   foaf:firstName "Anisa" ;
                   foaf:familyName "Rula" ;
                   foaf:name "Dr. Anisa Rula" ;
                   foaf:mbox <mailto:rula@cs.uni-bonn.de> ;
-                  foaf:depiction <https://media.licdn.com/dms/image/C4D03AQFaQ0Gv8u6gRw/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=BJgVtcjrWDGLEfGtGb6XAJe_wSl6kfDjZFB_7JErFGw> ;
-                  #foaf:phone <tel:+49-341-123456789> ;
+                  foaf:depiction <https://media.licdn.com/dms/image/C4D03AQFaQ0Gv8u6gRw/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=CzLQVHRlsgGc-E2oF_pIjOmdEFUhm8j11K3b0y5X-VM> ;
+                  #foaf:phone <Tel:+49-341-123456789> ;
                   foaf:title "Dr. " ;
                   foaf:status "Senior Researcher" ;
                   sda:linkedin "https://www.linkedin.com/in/anisa-rula-ph-d-9a258919" ;
                   ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                  schema:location <http://sda.tech/Address/SDA> ;
                   cv:aboutPerson "Dr. Anisa Rula is a Senior Researcher at the University of Bonn." ;
                   #sda:publication sdapublication:Publication1 ;
                   sda:group sdagroup:DistributedSemanticAnalytics ;
@@ -256,18 +208,17 @@ sdaperson:AnisaRula a foaf:Person, sdatech:seniorResearcher ;
 
 sdaperson:IoannaLytra a foaf:Person, sdatech:seniorResearcher ;
                   sda:publicationsTag "lytra" ;
-                  sda:room "1.051" ;
+                  ex:address sda:Room51 ;
                   foaf:firstName "Ioanna" ;
                   foaf:familyName "Lytra" ;
                   foaf:name "Dr. Ioanna Lytra" ;
                   foaf:mbox <mailto:lytra@cs.uni-bonn.de> ;
                   sda:linkedin "https://www.linkedin.com/in/ioanna-lytra" ;
                   foaf:depiction <https://media.licdn.com/dms/image/C4D03AQHI0f1CdDK-GQ/profile-displayphoto-shrink_200_200/0?e=1534377600&v=beta&t=jrfHofzQncDPTNqfbT_CSpzQXMnjFRsPOmt-tZCSyc4> ;
-                  #foaf:phone <tel:+49-341-123456789> ;
+                  #foaf:phone <Tel:+49-341-123456789> ;
                   foaf:title "Dr. " ;
                   foaf:status "Senior Researcher" ;
                   ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                  schema:location <http://sda.tech/Address/SDA> ;
                   cv:aboutPerson "Dr. Ioanna Lytra is a senior researcher at the Smart Data Analytics research group, University of Bonn. She has completed her PhD thesis on Software Architecture at the University of Vienna. Before that, she worked as a software engineer in the telecommunications area. She received my Diploma in Electrical and Computer Engineering with specialization in Computer Networks and Telecommunications from the National Technical University of Athens in 2006." ;
                   #sda:publication sdapublication:Publication1 ;
                   sda:group sdagroup:SemanticQuestionAnswering ;
@@ -275,56 +226,35 @@ sdaperson:IoannaLytra a foaf:Person, sdatech:seniorResearcher ;
 
 sdaperson:ChristophLange a foaf:Person, sdatech:seniorResearcher ;
                   sda:publicationsTag "lange" ;
-                  sda:room "C-326" ;
+                  ex:address sda:Room38 ;
                   foaf:firstName "Christoph" ;
                   foaf:familyName "Lange" ;
                   foaf:name "Dr. Christoph Lange" ;
                   foaf:mbox <mailto:christoph.lange-bever@iais.fraunhofer.de> ;
-                  foaf:depiction <http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png> ;
-                  #foaf:phone <tel:+49-341-123456789> ;
+                  foaf:depiction <http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png>  ;
                   foaf:title "Dr. " ;
                   foaf:status "Senior Researcher/ Head of EIS department @ IAIS" ;
                   sda:linkedin "https://www.linkedin.com/in/langechristoph/" ;
+                  sda:twitter "https://twitter.com/clange" ;
                   ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                  schema:location <http://sda.tech/Address/SDA> ;
-                  cv:aboutPerson "Dr. Christoph Lange is a Senior Researcher at the University of Bonn." ;
+                  cv:aboutPerson "<a href='http://langec.wordpress.com/about/'>Christoph Lange</a> is the head of the <a href='https://www.iais.fraunhofer.de/de/institut/abteilungen/enterprise-information-systems.html'>Enterprise Information Systems (EIS) department</a> at the Fraunhofer Institute for Intelligent Analysis and Information Systems IAIS and a senior researcher leading the <a href='http://sda.cs.uni-bonn.de/research-topic/semantic-data-management/'>Semantic Data Management group</a> within the <a href='http://sda.iai.uni-bonn.de/'>Smart Data Analytics (SDA) research group</a> at the University of Bonn, Germany.  He has been working with both institutions since 2013.  In 2011, he received a Ph.D. from Jacobs University Bremen, Germany, for <em><a href='http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.696.6350&rep=rep1&type=pdf'>enabling collaboration on semiformal mathematical knowledge by semantic web integration</a></em>.  His research is broadly concerned with representing expressive knowledge in complex domains in a formal but scalable way using linked (open) data, which enables and facilitates machine support with retrieval, analysis, quality assessment, publishing, collaborative authoring, etc.; results have been published in high-profile international journals and conferences (h-index 20 according to <a href='https://scholar.google.de/citations?user=Yr0WcFwAAAAJ&amp;hl=en'>Google Scholar</a>).  Application domains range from research infrastructures to information integration within enterprises and across enterprise boundaries.  The latter has been subject of contractual R&amp;D for leading German enterprises in the automotive and other sectors.  On semantic web and intelligent computer mathematics topics, Christoph Lange has organised numerous conferences, challenges, trainings and workshops, co-supervised 10 PhD students, taught lectures and coordinated lab and seminar classes, served as an expert for several international funding bodies and contributed to international OMG and W3C standards." ;
                   #sda:publication sdapublication:Publication1 ;
                   sda:group sdagroup:SemanticDataManagement ;
                   foaf:currentProject sdaproject:WDAqua, sdaproject:OSCOSS, sdaproject:Boost40.
 
-sdaperson:FabrizioOrlandi a foaf:Person, sdatech:seniorResearcher ;
-                  sda:publicationsTag "orlandi" ;
-                  sda:room "C-326" ;
-                  foaf:firstName "Fabrizio" ;
-                  foaf:familyName "Orlandi" ;
-                  foaf:name "Dr. Fabrizio Orlandi" ;
-                  foaf:mbox <mailto:fabrizio.orlandi@iais.fraunhofer.de> ;
-                  foaf:depiction <https://media.licdn.com/dms/image/C4D03AQFP5A5heaAqbQ/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=hogtkfwPrPq5MkbgizpbyrwQFhsSbtE7BvY6r-DTx28> ;
-                  #foaf:phone <tel:+49-341-123456789> ;
-                  foaf:title "Dr. " ;
-                  foaf:status "Senior Researcher" ;
-                  sda:linkedin "https://www.linkedin.com/in/fabriziorlandi/" ;
-                  ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                  schema:location <http://sda.tech/Address/SDA> ;
-                  cv:aboutPerson "Dr. Fabrizio Orlandi is a Senior Researcher at the University of Bonn." ;
-                  #sda:publication sdapublication:Publication1 ;
-                  sda:group sdagroup:KnowledgeExtractionAndValidation ;
-                  foaf:currentProject sdaproject:SLIPO, sdaproject:LinDA .
-
 sdaperson:SimonScerri a foaf:Person, sdatech:seniorResearcher ;
                   sda:publicationsTag "scerri" ;
-                  sda:room "C-326" ;
+                  ex:address sda:RoomC326 ;
                   foaf:firstName "Simon" ;
                   foaf:familyName "Scerri" ;
                   foaf:name "Dr. Simon Scerri" ;
                   foaf:mbox <mailto:simon.scerri@iais.fraunhofer.de> ;
-                  foaf:depiction <https://media.licdn.com/dms/image/C4E03AQFYrSvoRm3jaw/profile-displayphoto-shrink_200_200/0?e=1534377600&v=beta&t=c9p_MRbJwbXDJif1tiG-odO5Os8xxSw2g47_Q6cOWsI> ;
-                  #foaf:phone <tel:+49-341-123456789> ;
+                  foaf:depiction <http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png> ;
+                  #foaf:phone <Tel:+49-341-123456789> ;
                   foaf:title "Dr. " ;
                   foaf:status "Senior Researcher" ;
                   sda:linkedin "https://www.linkedin.com/in/scerrisimon/" ;
                   ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                  schema:location <http://sda.tech/Address/SDA> ;
                   cv:aboutPerson "Dr. Simon Scerri is a Senior Researcher at the University of Bonn." ;
                   #sda:publication sdapublication:Publication1 ;
                   sda:group sdagroup:KnowledgeExtractionAndValidation ;
@@ -335,13 +265,13 @@ sdaperson:GezimSejdiu a foaf:Person, sdatech:phdStudent ;
                    rdfs:seeAlso <http://aksw.org/GezimSejdiu> ;
                    owl:sameAs <http://aksw.org/GezimSejdiu> ;
                    sda:publicationsTag "sejdiu" ;
-                   sda:room "1.052" ;
+                   ex:address sda:Room52 ;
                    foaf:familyName "Sejdiu" ;
                    foaf:name "Gezim Sejdiu" ;
                    foaf:nick "Gezim" ;
                    foaf:mbox <mailto:sejdiu@cs.uni-bonn.de> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C4D03AQGn3hPIYPs3AA/profile-displayphoto-shrink_200_200/0?e=1533772800&v=beta&t=TaXS5XmOI_HD2ZhxnZy89Xg0e83VjxOmJPQ2twpQ3_Y> ;
-                   foaf:phone <tel:+49-341-123456789> ;
+                   foaf:depiction <https://avatars3.githubusercontent.com/u/5259296?s=400&u=2923073a71257798968eb57c860c45d4e7a18d72&v=4> ;
+                   foaf:phone <Tel:+49-341-123456789> ;
                    foaf:firstName "Gezim" ;
                    foaf:title "" ;
                    foaf:status "PhD Student" ;
@@ -350,7 +280,6 @@ sdaperson:GezimSejdiu a foaf:Person, sdatech:phdStudent ;
                    sda:twitter "https://twitter.com/Gezim_Sejdiu" ;
                    sda:github "https://github.com/GezimSejdiu" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Gëzim Sejdiu is a PhD Student & Research Associate at the University of Bonn. Gëzim’s research interest are in the area of Semantic Web, Big Data and Machine Learning. He is also interested in the area of distributed computing systems (Apache Spark, Apache Flink)." ;
                    #sda:publication sdapublication:Publication1 ;
                    sda:group sdagroup:DistributedSemanticAnalytics ;
@@ -360,19 +289,17 @@ sdaperson:LorenzBuehmann a foaf:Person, sdatech:phdStudent ;
                    rdfs:seeAlso <http://aksw.org/LorenzBuehmann> ;
                    owl:sameAs <http://aksw.org/LorenzBuehmann> ;
                    sda:publicationsTag "buehmann" ;
-                   #sda:room "A120" ;
                    foaf:firstName "Lorenz" ;
                    foaf:familyName "Bühmann" ;
                    foaf:name "Lorenz Bühmann" ;
                    foaf:mbox <mailto:buehmann@informatik.uni-leipzig.de> ;
                    foaf:depiction <http://ldap.aksw.org/pic/sn/Bühmann/gn/Lorenz> ;
-                   foaf:phone <tel:+49-341-9732253> ;
+                   foaf:phone <Tel:+49-341-9732253> ;
                    #foaf:title "" ;
                    foaf:status "PhD Student" ;
                    sda:linkedin "https://www.linkedin.com/in/lorenz-b%C3%BChmann-09486861/" ;
                    sda:website "http://aksw.org/LorenzBuehmann.html" ;
                    ov:businessCard <http://aksw.org/vCard/Hainstrasse> ;
-                   schema:location <http://aksw.org/Address/InfAI> ;
                    cv:aboutPerson "Lorenz Bühmann is a PhD Student & Research Associate at the University of Leipzig. His research interest are in the area of Semantic Web, Big Data and Machine Learning. He is also interested in the area of distributed computing systems (Apache Spark, Apache Flink)." ;
                    #sda:publication sdapublication:Publication1 ;
                    sda:group sdagroup:StructuredMachineLearning ;
@@ -383,13 +310,13 @@ sdaperson:MohnishDubey a foaf:Person, sdatech:phdStudent ;
                    rdfs:seeAlso <http://aksw.org/MohnishDubey> ;
                    owl:sameAs <http://aksw.org/MohnishDubey> ;
                    sda:publicationsTag "dubey" ;
-                   sda:room "1.051" ;
+                   ex:address sda:Room51 ;
                    foaf:familyName "Dubey" ;
                    foaf:name "Mohnish Dubey" ;
                    foaf:nick "Mohnish" ;
                    foaf:mbox <mailto:dubey@cs.uni-bonn.de> ;
                    foaf:depiction <https://image.ibb.co/k3mRsc/download.jpg> ;
-                   foaf:phone <tel:+49-341-123456789> ;
+                   foaf:phone <Tel:+49-341-123456789> ;
                    foaf:firstName "Mohnish" ;
                    foaf:title "" ;
                    foaf:status "PhD Student" ;
@@ -398,7 +325,6 @@ sdaperson:MohnishDubey a foaf:Person, sdatech:phdStudent ;
                    sda:twitter "https://twitter.com/MohnishDubey" ;
                    sda:github "https://github.com/mohnish-rygbee" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Mohnish Dubey is a PhD Student & Research Associate at the University of Bonn. Mohnish’s research interest are in the area of Question Answering, Semantic Web and Machine Learning." ;
                    #sda:publication sdapublication:Publication1 ;
                    sda:group sdagroup:SemanticQuestionAnswering ;
@@ -408,13 +334,13 @@ sdaperson:HarshThakkar a foaf:Person, sdatech:phdStudent ;
                    rdfs:seeAlso <http://harshthakkar.in/> ;
                    owl:sameAs <http://aksw.org/HarshThakkar> ;
                    sda:publicationsTag "thakkar" ;
-                   sda:room "1.052" ;
+                   ex:address sda:Room52 ;
                    foaf:familyName "Thakkar" ;
                    foaf:name "Harsh Thakkar" ;
                    foaf:nick "Harsh" ;
                    foaf:mbox <mailto:thakkar@cs.uni-bonn.de> ;
                    foaf:depiction <http://harshthakkar.in/wp-content/uploads/2009/12/Harsh.jpg> ;
-                   foaf:phone <tel:+49-151-45501359> ;
+                   foaf:phone <Tel:+49-151-45501359> ;
                    foaf:firstName "Harsh" ;
                    foaf:title "" ;
                    foaf:status "PhD Student" ;
@@ -423,7 +349,6 @@ sdaperson:HarshThakkar a foaf:Person, sdatech:phdStudent ;
                    sda:twitter "https://twitter.com/harsh9t" ;
                    sda:github "https://github.com/harsh9t" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Mr. Harsh V. Thakkar is currently pursuing Doctoral studies at the University of Bonn under the supervision of Prof. Dr. Jens Lehmann and Prof. Dr. Sören Auer. His research areas are not limited to Graph Data Management, Formal Query Translation, Benchmarking and Linked Open Data Quality. Currently, he works as Marie-Curie Early Stage Researcher (ESR) in the EU funded project WDAqua ITN. " ;
                    #sda:publication sdapublication:Publication1 ;
                    sda:group sdagroup:DistributedSemanticAnalytics ;
@@ -433,13 +358,13 @@ sdaperson:DiegoEsteves a foaf:Person, sdatech:phdStudent ;
                    rdfs:seeAlso <http://aksw.org/DiegoEsteves> ;
                    owl:sameAs <http://aksw.org/DiegoEsteves> ;
                    sda:publicationsTag "esteves" ;
-                   sda:room "1.068" ;
+                   ex:address sda:Room68 ;
                    foaf:familyName "Esteves" ;
                    foaf:name "Diego Esteves" ;
                    foaf:nick "Diego" ;
                    foaf:mbox <mailto:esteves@cs.uni-bonn.de> ;
                    foaf:depiction <http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png> ;
-                   foaf:phone <tel:+49-341-123456789> ;
+                   foaf:phone <Tel:+49-341-123456789> ;
                    foaf:firstName "Diego" ;
                    foaf:title "" ;
                    foaf:status "PhD Student" ;
@@ -448,7 +373,6 @@ sdaperson:DiegoEsteves a foaf:Person, sdatech:phdStudent ;
                    sda:twitter "https://twitter.com/dne5pt" ;
                    sda:github "https://github.com/diegoesteves" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Diego Esteves is a PhD Student & Research Associate at the University of Bonn. Esteves’ research interest are in the area of Natural Language Processing, Machine Learning and Semantic Web." ;
                    #sda:publication sdapublication:Publication1 ;
                    sda:group sdagroup:KnowledgeExtractionAndValidation ;
@@ -456,53 +380,51 @@ sdaperson:DiegoEsteves a foaf:Person, sdatech:phdStudent ;
 
 sdaperson:FathoniMusyaffa a foaf:Person, sdatech:phdStudent ;
                    sda:publicationsTag "musyaffa" ;
-                   sda:room "1.068" ;
+                   ex:address sda:Room68 ;
                    foaf:familyName "Musyaffa" ;
                    foaf:name "Fathoni A. Musyaffa" ;
                    foaf:nick "Fathoni" ;
-                   foaf:mbox <mailto:musyaffa(at)cs.uni-bonn.de> ;
+                   foaf:mbox <mailto:musyaffa@cs.uni-bonn.de> ;
                    foaf:depiction <https://media.licdn.com/dms/image/C4D03AQGsHN3ivT3TXg/profile-displayphoto-shrink_200_200/0?e=1534377600&v=beta&t=oSMqcyfQkKSybW6qw3_lAMu7GbIOa5byzyMhbCFiddk> ;
-                   foaf:phone <tel:+49-341-123456789> ;
+                   foaf:phone <Tel:+49-341-123456789> ;
                    foaf:firstName "Fathoni" ;
                    foaf:title "" ;
                    foaf:status "PhD Student" ;
-                   sda:linkedin "www.linkedin.com/in/fathoni" ;
+                   sda:linkedin "https://www.linkedin.com/in/fathoni/" ;
                    sda:twitter "https://twitter.com/fathoni_am" ;
                    sda:github "https://github.com/fathoni" ;
-                   schema:location <http://sda.tech/Address/SDA> ;
+                   sda:group sdagroup:SmartServices ;
                    cv:aboutPerson "Fathoni Musyaffa is a PhD Student & Research Associate at the University of Bonn. Fathoni's research interest are in the area of Semantic Web, Linked and Open Data especially in the domain of budget and spending from public administrations. He is also interested in the area of data interlinking and natural language processing." ;
                    #sda:publication sdapublication:Publication1 ;
                    sda:group sdagroup:DistributedSemanticAnalytics .
 
 sdaperson:MousaviNajmeh a foaf:Person, sdatech:phdStudent ;
                    sda:publicationsTag "mousavi" ;
-                   sda:room "1.068" ;
                    foaf:familyName "Mousavi Nejad" ;
                    foaf:name "Najmeh Mousavi Nejad" ;
                    foaf:nick "Najmeh" ;
                    foaf:mbox <mailto:nejad@cs.uni-bonn.de> ;
                    foaf:depiction <https://avatars0.githubusercontent.com/u/15237228?s=400&v=4> ;
-                   foaf:phone <tel:+49-341-123456789> ;
+                   foaf:phone <Tel:+49-341-123456789> ;
                    foaf:firstName "Najmeh" ;
                    foaf:title "" ;
                    foaf:status "PhD Student" ;
                    sda:linkedin "www.linkedin.com/in/najmeh-mousavi" ;
                    sda:twitter "https://twitter.com/Najme_M" ;
                    sda:github "https://github.com/Najmeh-M" ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Najmeh Mousavi Nejad is a PhD student in the Smart Data Analytics group at University of Bonn. She received her master's degree in Artificial Intelligence in 2011 in Iran, following which she accumulated research experience supported by publications as well as working experience in industry. Since 2015, she is the recipient of a DAAD scholarship (German Academic Exchange Service) for PhD studies in Germany and continues to conduct research (also received a nomination for Best Research and Innovation Paper award in an international conference). Her research interests are semantic web, text mining and analysis, information extraction & retrieval and Natural language processing." ;
                    #sda:publication sdapublication:Publication1 ;
                    sda:group sdagroup:KnowledgeExtractionAndValidation .
 
 sdaperson:DebanjanChaudhuri a foaf:Person, sdatech:phdStudent ;
                    sda:publicationsTag "chaudhuri" ;
-                   sda:room "1.064" ;
+                   ex:address sda:Room64 ;
                    foaf:familyName "Chaudhuri" ;
                    foaf:name "Debanjan Chaudhuri" ;
                    foaf:nick "Debanjan" ;
                    foaf:mbox <mailto:deba.kgec@gmail.com> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C5603AQFar03Ko407ww/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=luBCLQ76b8xdaUEuU8XVbOr2kGxLs2w_XnerjwPFr_A> ;
-                   foaf:phone <tel:+49-341-123456789> ;
+                   foaf:depiction <https://media.licdn.com/dms/image/C5603AQFar03Ko407ww/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=65xLneTHUZk043IQGSCT8uUX8D_SCDDkqAv8MasTc9M> ;
+                   foaf:phone <Tel:+49-341-123456789> ;
                    foaf:firstName "Debanjan" ;
                    foaf:title "" ;
                    foaf:status "PhD Student" ;
@@ -510,7 +432,6 @@ sdaperson:DebanjanChaudhuri a foaf:Person, sdatech:phdStudent ;
                    sda:twitter "" ;
                    sda:github "https://github.com/DeepInEvil" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Debanjan Chaudhuri is a PhD Student at the University of Bonn." ;
                    #sda:publication sdapublication:Publication1 ;
                    sda:group sdagroup:SemanticQuestionAnswering .
@@ -519,13 +440,12 @@ sdaperson:SimonBin a foaf:Person, sdatech:phdStudent ;
                    rdfs:seeAlso <http://aksw.org/SimonBin> ;
                    owl:sameAs <http://aksw.org/SimonBin> ;
                    sda:publicationsTag "bin" ;
-                   sda:room "" ;
                    foaf:familyName "Bin" ;
                    foaf:name "Simon Bin" ;
                    foaf:nick "Simon" ;
                    foaf:mbox <mailto:sbin@informatik.uni-leipzig.de> ;
                    foaf:depiction <http://ldap.aksw.org/pic/sn/Bin> ;
-                   foaf:phone "" ;
+                   foaf:phone <Tel:+49-341-9732292> ;
                    foaf:firstName "Simon" ;
                    foaf:title "" ;
                    foaf:status "PhD Student" ;
@@ -534,7 +454,6 @@ sdaperson:SimonBin a foaf:Person, sdatech:phdStudent ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Hainstrasse> ;
-                   schema:location <http://aksw.org/Address/InfAI> ;
                    cv:aboutPerson "Simon Bin is a PhD Student at the University of Leipzig." ;
                    sda:group sdagroup:StructuredMachineLearning ;
                    foaf:currentProject sdaproject:DLLearner, sdaproject:SMLBench, sdaproject:SANSAStack, sdaproject:SAKE .
@@ -543,13 +462,12 @@ sdaperson:PatrickWestphal a foaf:Person, sdatech:phdStudent ;
                    rdfs:seeAlso <http://aksw.org/PatrickWestphal.html> ;
                    owl:sameAs <http://aksw.org/PatrickWestphal.html> ;
                    sda:publicationsTag "westphal" ;
-                   sda:room "" ;
                    foaf:familyName "Westphal" ;
                    foaf:name "Patrick Westphal" ;
                    foaf:nick "Patrick" ;
                    foaf:mbox <mailto:patrick.westphal@informatik.uni-leipzig.de> ;
                    foaf:depiction <http://ldap.aksw.org/pic/sn/Westphal/gn/Patrick> ;
-                   foaf:phone "" ;
+                   foaf:phone <Tel:+49-341-9732305> ;
                    foaf:firstName "Patrick" ;
                    foaf:title "" ;
                    foaf:status "PhD Student" ;
@@ -558,7 +476,6 @@ sdaperson:PatrickWestphal a foaf:Person, sdatech:phdStudent ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Hainstrasse> ;
-                   schema:location <http://aksw.org/Address/InfAI> ;
                    cv:aboutPerson "Patrick Westphal is a PhD Student at the University of Leipzig." ;
                    sda:group sdagroup:StructuredMachineLearning ;
                    foaf:currentProject sdaproject:DLLearner, sdaproject:SMLBench, sdaproject:SANSAStack, sdaproject:QROWD .
@@ -567,13 +484,12 @@ sdaperson:ClausStadler a foaf:Person, sdatech:phdStudent ;
                    rdfs:seeAlso <http://aksw.org/ClausStadler> ;
                    owl:sameAs <http://aksw.org/ClausStadler> ;
                    sda:publicationsTag "stadler" ;
-                   sda:room "" ;
                    foaf:familyName "Stadler" ;
                    foaf:name "Claus Stadler" ;
                    foaf:nick "Claus" ;
                    foaf:mbox <mailto:cstadler@informatik.uni-leipzig.de> ;
                    foaf:depiction <http://ldap.aksw.org/pic/sn/Stadler/gn/Claus> ;
-                   foaf:phone "" ;
+                   foaf:phone <Tel:+49-341-9732292> ;
                    foaf:firstName "Claus" ;
                    foaf:title "" ;
                    foaf:status "PhD Student" ;
@@ -582,7 +498,6 @@ sdaperson:ClausStadler a foaf:Person, sdatech:phdStudent ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Hainstrasse> ;
-                   schema:location <http://aksw.org/Address/InfAI>;
                    cv:aboutPerson "Claus Stadler is a PhD Student at the University of Leipzig." ;
                    sda:group sdagroup:StructuredMachineLearning ;
                    foaf:currentProject sdaproject:DLLearner, sdaproject:SANSAStack .
@@ -591,13 +506,13 @@ sdaperson:KonradHoeffner a foaf:Person, sdatech:phdStudent ;
                    rdfs:seeAlso <http://aksw.org/KonradHoeffner> ;
                    owl:sameAs <http://aksw.org/KonradHoeffner> ;
                    sda:publicationsTag "hoeffner" ;
-                   sda:room "" ;
+                   ex:address sda:RoomP905 ;
                    foaf:familyName "Hoeffner" ;
                    foaf:name "Konrad Hoeffner" ;
                    foaf:nick "Konrad" ;
                    foaf:mbox <mailto:konrad.hoeffner@uni-leipzig.de> ;
                    foaf:depiction <http://ldap.aksw.org/pic/sn/Hoeffner/gn/Konrad> ;
-                   foaf:phone "" ;
+                   foaf:phone <Tel:+49-341-9732273> ;
                    foaf:firstName "Konrad" ;
                    foaf:title "" ;
                    foaf:status "PhD Student" ;
@@ -606,7 +521,6 @@ sdaperson:KonradHoeffner a foaf:Person, sdatech:phdStudent ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Hainstrasse> ;
-                   schema:location <http://aksw.org/Address/InfAI> ;
                    cv:aboutPerson "Konrad Hoeffner is a PhD Student at the University of Leipzig." ;
                    sda:group sdagroup:SemanticQuestionAnswering .
 
@@ -615,13 +529,12 @@ sdaperson:MofeedHassan a foaf:Person, sdatech:phdStudent ;
                    rdfs:seeAlso <http://aksw.org/MofeedHassan> ;
                    owl:sameAs <http://aksw.org/MofeedHassan> ;
                    sda:publicationsTag "hassan" ;
-                   sda:room "" ;
                    foaf:familyName "Hassan" ;
                    foaf:name "Mofeed Hassan" ;
                    foaf:nick "Mofeed" ;
                    foaf:mbox <mailto:mounir@informatik.uni-leipzig.de> ;
                    foaf:depiction <http://ldap.aksw.org/pic/sn/Hassan/gn/Mofeed> ;
-                   foaf:phone "" ;
+                   foaf:phone <Tel:+49-341-97-32260> ;
                    foaf:firstName "Mofeed" ;
                    foaf:title "" ;
                    foaf:status "PhD Student" ;
@@ -630,12 +543,11 @@ sdaperson:MofeedHassan a foaf:Person, sdatech:phdStudent ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Hainstrasse> ;
-                   schema:location <http://aksw.org/Address/InfAI> ;
                    cv:aboutPerson "Mofeed Hassan is a PhD Student at the University of Leipzig." .
 
 sdaperson:HamidZafar a foaf:Person, sdatech:phdStudent ;
                    sda:publicationsTag "zafar" ;
-                   sda:room "1.064" ;
+                   ex:address sda:Room64 ;
                    foaf:familyName "Zafar" ;
                    foaf:name "Hamid Zafar" ;
                    foaf:nick "Hamid" ;
@@ -647,10 +559,9 @@ sdaperson:HamidZafar a foaf:Person, sdatech:phdStudent ;
                    foaf:status "PhD Student" ;
                    sda:linkedin "https://www.linkedin.com/in/hamid-zafar-138a0a46/" ;
                    sda:website "" ;
-                   sda:twitter "" ;
-                   sda:github "" ;
+                   sda:twitter "https://twitter.com/HamidZafart" ;
+                   sda:github "https://github.com/hamidzafar" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Hamid Zafar is a PhD Student at the University of Bonn." ;
                    sda:group sdagroup:SemanticQuestionAnswering ;
                    foaf:currentProject sdaproject:AskNow .
@@ -658,56 +569,55 @@ sdaperson:HamidZafar a foaf:Person, sdatech:phdStudent ;
 
 sdaperson:ShimaaIbrahim a foaf:Person, sdatech:phdStudent ;
                    sda:publicationsTag "ibrahim" ;
-                   sda:room "1.052" ;
+                   ex:address sda:Room52 ;
                    foaf:familyName "Ibrahim" ;
                    foaf:name "Shimaa Ibrahim" ;
                    foaf:nick "Shimaa" ;
-                   foaf:mbox <mailto:shmkhaled@gmail.com> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C4D03AQFdCqQ_cfDVkw/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=iiJM_OYYPEGC2vfpHkozpoEsR-T8L7xuO1w5SBX2V-k> ;
+                   foaf:mbox <mailto:ibrahim@cs.uni-bonn.de> ;
+                   foaf:depiction <https://media.licdn.com/dms/image/C4D03AQFdCqQ_cfDVkw/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=_oFpSC62bSiDtmK45UhGey8n1m9Cz_w0TvB-DcG1f5c> ;
                    foaf:phone "" ;
                    foaf:firstName "Shimaa" ;
                    foaf:title "" ;
                    foaf:status "PhD Student" ;
-                   sda:linkedin "https://www.linkedin.com/in/shimaa-khaled-57a23b21/" ;
+                   sda:linkedin "https://www.linkedin.com/in/shimaa-ibrahim-57a23b21/" ;
                    sda:website "" ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
-                   cv:aboutPerson "Shimaa Ibrahim is a PhD Student at the University of Bonn." ;
+                   cv:aboutPerson "Shimaa Ibrahim is a PhD Student in the Smart Data Analytics (SDA) research group at the University of Bonn. She got her bachelor in Computer Science in 2006 and her master degree in Information Technology in 2013 from the Alexandria University, Egypt. Her research interests include Semantic Web, Big Data and Machine Learning." ;
                    sda:group sdagroup:DistributedSemanticAnalytics ;
                    foaf:currentProject sdaproject:SANSAStack .
 
 
 sdaperson:SaharVahdati a foaf:Person, sdatech:phdStudent ;
                    sda:publicationsTag "vahdati" ;
-                   sda:room "1.126" ;
+                   ex:address sda:Room126 ;
                    foaf:familyName "Vahdati" ;
                    foaf:name "Sahar Vahdati" ;
                    foaf:nick "Sahar" ;
-                   foaf:mbox <mailto:s6savahd@uni-bonn.de> ;
-                   foaf:depiction <http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png> ;
-                   foaf:phone "" ;
+                   foaf:mbox <mailto:vahdati@cs.uni-bonn.de> ;
+                   foaf:depiction <https://goo.gl/2fK2D9> ;
+                   foaf:phone <Tel:0228/73-4533> ; ;
                    foaf:firstName "Sahar" ;
                    foaf:title "" ;
                    foaf:status "PhD Student" ;
                    sda:linkedin "https://www.linkedin.com/in/saharvahdati/" ;
                    sda:website "" ;
-                   sda:twitter "" ;
+                   sda:twitter "https://twitter.com/SaVahdati" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
-                   cv:aboutPerson "Sahar Vahdati is a PhD Student at the University of Bonn." ;
+                   cv:aboutPerson "Sahar Vahdati is a research associate and a PhD candidate in the Smart Data Analytics (SDA) research group at the University of Bonn. She also partly collaborate in teaching activities of Intelligent Database group. She received her master’s degree in Computer Science in 2013 from the University of Bonn. Her research interests include linked data, big data, data integration and management, scholarly communication, and semantic publishing." ;
+                   sda:group sdagroup:SemanticDataManagement ;
                    foaf:currentProject sdaproject:OSCOSS .
 
 sdaperson:ElisaMargarethSibarani a foaf:Person, sdatech:phdStudent ;
                    sda:publicationsTag "Sibarani" ;
-                   sda:room "1.068" ;
+                   ex:address sda:Room68 ;
                    foaf:familyName "Sibarani" ;
                    foaf:name "Elisa Margareth Sibarani" ;
                    foaf:nick "Sibarani" ;
                    foaf:mbox <mailto:elisamargareth.sibarani@gmail.com> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C5103AQExWe_M641oBg/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=-13T6NCOEfIEWuShLYvgqYpbu1zkYWTwX-TA_H7uXC0> ;
+                   foaf:depiction <https://media.licdn.com/dms/image/C5103AQExWe_M641oBg/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=VbEwgrk8Z8wULy-EKDmJmTT2vPMKYbRBYNEpB07yCSE> ;
                    foaf:phone "" ;
                    foaf:firstName "Elisa" ;
                    foaf:title "" ;
@@ -717,17 +627,16 @@ sdaperson:ElisaMargarethSibarani a foaf:Person, sdatech:phdStudent ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Elisa Margareth Sibarani is a PhD Student at the University of Bonn." .
 
 sdaperson:AfshinSadeghi a foaf:Person, sdatech:phdStudent ;
                    sda:publicationsTag "sadeghi" ;
-                   sda:room "1.052" ;
+                   ex:address sda:Room52 ;
                    foaf:familyName "Sadeghi" ;
                    foaf:name "Afshin Sadeghi" ;
                    foaf:nick "Afshin" ;
                    foaf:mbox <mailto:sadeghi@cs.uni-bonn.de> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C4E03AQGUHNCjd6OaJw/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=19fk6NgfEChiuq1dwtgmJoXfkmsiVaaC9rPAgS7FHiU> ;
+                   foaf:depiction <https://media.licdn.com/dms/image/C4E03AQGUHNCjd6OaJw/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=SaOS3oVpGzFFvwDMf1FMzsGgW2F5wmpMmGB9tn6C6aw> ;
                    foaf:phone "" ;
                    foaf:firstName "Afshin" ;
                    foaf:title "" ;
@@ -737,14 +646,13 @@ sdaperson:AfshinSadeghi a foaf:Person, sdatech:phdStudent ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Afshin Sadeghi is a PhD Student at the University of Bonn." ;
-                   sda:group sdagroup:DistributedSemanticAnalytics ;
+                   sda:group sdagroup:KnowledgeGraph ;
                    foaf:currentProject sdaproject:SANSAStack, sdaproject:OSCOSS .
 
 sdaperson:IsaiahOnandoMulang a foaf:Person, sdatech:phdStudent ;
                    sda:publicationsTag "mulang" ;
-                   sda:room "1.068" ;
+                   ex:address sda:Room68 ;
                    foaf:familyName "Onando Mulang'" ;
                    foaf:name "Isaiah Onando Mulang'" ;
                    foaf:nick "Isaiah" ;
@@ -759,17 +667,17 @@ sdaperson:IsaiahOnandoMulang a foaf:Person, sdatech:phdStudent ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
+                   sda:group sdagroup:KnowledgeGraph ;
                    cv:aboutPerson "Isaiah Onando Mulang' is a PhD Student at the University of Bonn." .
 
 sdaperson:DenisLukovnikov a foaf:Person, sdatech:phdStudent ;
                    sda:publicationsTag "lukovnikov" ;
-                   sda:room "1.064" ;
+                   ex:address sda:Room64 ;
                    foaf:familyName "Lukovnikov" ;
                    foaf:name "Denis Lukovnikov" ;
                    foaf:nick "Denis" ;
                    foaf:mbox <mailto:lukovnikov@outlook.com> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C5603AQHAghmayn3Ivg/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=2axUhBN8QnFSk7vx394RIWKee3XZC87AaAua651n5Mg> ;
+                   foaf:depiction <https://media.licdn.com/dms/image/C5603AQHAghmayn3Ivg/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=HxXHH9WJb7O2psxvpWNFp9acg0MdqurtARTHQ9ALIyI> ;
                    foaf:phone "" ;
                    foaf:firstName "Denis" ;
                    foaf:title "" ;
@@ -779,14 +687,13 @@ sdaperson:DenisLukovnikov a foaf:Person, sdatech:phdStudent ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Denis Lukovnikov is a PhD Student at the University of Bonn." ;
                    sda:group sdagroup:SemanticQuestionAnswering ;
                    foaf:currentProject sdaproject:WDAqua .
 
 sdaperson:SaidFathalla a foaf:Person, sdatech:phdStudent ;
                    sda:publicationsTag "fathalla" ;
-                   sda:room "1.052" ;
+                   ex:address sda:Room52 ;
                    foaf:familyName "Fathalla" ;
                    foaf:name "Said Fathalla" ;
                    foaf:nick "Said" ;
@@ -801,12 +708,10 @@ sdaperson:SaidFathalla a foaf:Person, sdatech:phdStudent ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Said Fathalla is a PhD Student at the University of Bonn." .
 
 sdaperson:MichaelGalkin a foaf:Person, sdatech:phdStudent ;
                    sda:publicationsTag "galkin" ;
-                   sda:room "" ;
                    foaf:familyName "Galkin" ;
                    foaf:name "Michael Galkin" ;
                    foaf:nick "Michael" ;
@@ -821,33 +726,33 @@ sdaperson:MichaelGalkin a foaf:Person, sdatech:phdStudent ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Michael Galkin is a PhD Student at the University of Bonn." .
 
 sdaperson:HebaIbrahim a foaf:Person, sdatech:phdStudent ;
                    sda:publicationsTag "ibrahim" ;
-                   sda:room "1.052" ;
+                   ex:address sda:Room52 ;
                    foaf:familyName "Ibrahim" ;
                    foaf:name "Heba Ibrahim" ;
                    foaf:nick "Heba" ;
-                   foaf:mbox <mailto:heba.a.ibrahim@gmail.com> ;
+                   foaf:mbox <mailto:hmohamed@uni-bonn.de> ;
                    foaf:depiction <http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png> ;
                    foaf:phone "" ;
                    foaf:firstName "Heba" ;
                    foaf:title "" ;
                    foaf:status "PhD Student" ;
-                   sda:linkedin "" ;
+                   sda:linkedin "www.linkedin.com/in/heba-mohamed-b7b7a914b" ;
                    sda:website "" ;
-                   sda:twitter "" ;
+                   sda:twitter "https://twitter.com/HebaAIbrahim1" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    sda:group sdagroup:DistributedSemanticAnalytics ;
-                   cv:aboutPerson "Heba Ibrahim is a PhD Student at the University of Bonn.".
+                   cv:aboutPerson "Heba Mohamed is a PhD candidate in the Smart Data Analytics (SDA) research group at the University of Bonn. She received her master’s degree in Computer Science in 2012 from the Alexandria University, Egypt. Her research interests include Semantic Web, Big Data and Machine Learning.";
+                   sda:group sdagroup:DistributedSemanticAnalytics ;
+                   foaf:currentProject sdaproject:BigDataEurope.
 
 sdaperson:MojtabaNayyeri a foaf:Person, sdatech:phdStudent ;
                    sda:publicationsTag "nayyeri" ;
-                   sda:room "1.052" ;
+                   ex:address sda:Room52 ;
                    foaf:familyName "Nayyeri" ;
                    foaf:name "Mojtaba Nayyeri" ;
                    foaf:nick "Mojtaba" ;
@@ -862,21 +767,20 @@ sdaperson:MojtabaNayyeri a foaf:Person, sdatech:phdStudent ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
-                   sda:group sdagroup:SoftwareEngineeringforDataScience ;
+                   sda:group sdagroup:KnowledgeGraph ;
                    cv:aboutPerson "Mojtaba Nayyeri is a PhD Student at the University of Bonn.".
 
 ##############################Associated Researchers#####################
 
 sdaperson:SteffenLohmann a foaf:Person, sdatech:associateReseracher ;
                   sda:publicationsTag "lohmann" ;
-                  sda:room "B3-226" ;
+                  ex:address sda:RoomB3226 ;
                   foaf:firstName "Steffen" ;
                   foaf:familyName "Lohmann" ;
                   foaf:name "Dr. Steffen Lohmann" ;
                   foaf:mbox <mailto:steffen.lohmann@iais.fraunhofer.de> ;
                   foaf:depiction <http://steffen-lohmann.de/img/steffen_lohmann_large.jpg> ;
-                  foaf:phone <tel:+49-2241-14-3021> ;
+                  foaf:phone <Tel:+49-2241-14-3021> ;
                   foaf:title "Dr. " ;
                   foaf:status "Senior Researcher" ;
                   sda:website "http://steffen-lohmann.de/" ;
@@ -884,40 +788,57 @@ sdaperson:SteffenLohmann a foaf:Person, sdatech:associateReseracher ;
                   sda:twitter "" ;
                   sda:github "" ;
                   ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                  schema:location <http://sda.tech/Address/SDA> ;
                   cv:aboutPerson "Dr. Steffen Lohmann is a researcher and deputy head of the Enterprise Information Systems (EIS) department at the Fraunhofer Institute for Intelligent Analysis and Information Systems (IAIS), and associated member of the Smart Data Analytics (SDA) research group of the University of Bonn. My research is devoted to all exciting topics related to Semantic Technologies, Knowledge Engineering, Interactive Systems, Information Visualization, and the Web. At Fraunhofer IAIS, I am leading the business unit on Enterprise Information Integration concerned with research and development in areas such as Industry 4.0, Internet of Things, Semantic Interoperability, and Data Integration." ;
                   sda:group sdagroup:SemanticDataManagement .
 
 sdaperson:DamienGraux a foaf:Person, sdatech:associateReseracher ;
                   sda:publicationsTag "graux" ;
-                  sda:room "B3-226" ;
+                  ex:address sda:RoomB3226 ;
                   foaf:firstName "Damien" ;
                   foaf:familyName "Graux" ;
                   foaf:name "Dr. Damien Graux" ;
                   foaf:mbox <mailto:damien.graux@iais.fraunhofer.de> ;
                   foaf:depiction <http://tyrex.inria.fr/people/img/damien.jpg> ;
                   foaf:phone "" ;
-                  #foaf:phone <tel:+49-2241-14-1234> ;
+                  #foaf:phone <Tel:+49-2241-14-1234> ;
                   foaf:title "Dr. " ;
                   foaf:status "Senior Researcher" ;
                   sda:website "" ;
                   sda:twitter "" ;
                   sda:github "" ;
                   ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                  schema:location <http://sda.tech/Address/SDA> ;
                   cv:aboutPerson "Dr. Damien Graux is a Senior Researcher at the Fraunhofer IAIS." ;
                   sda:group sdagroup:SemanticDataManagement, sdagroup:DistributedSemanticAnalytics ;
                   foaf:currentProject sdaproject:SANSAStack .
 
+sdaperson:AsjaFischer a foaf:Person, sdatech:associateReseracher ;
+                  sda:publicationsTag "fischer" ;
+                  ex:address sda:Room65 ;
+                  sda:address "Endenicher Allee 19a, 53115 Bonn" ;
+                  foaf:firstName "Asja" ;
+                  foaf:familyName "Fischer" ;
+                  foaf:name "Dr. Asja Fischer" ;
+                  foaf:mbox <mailto:asja.fischer@gmail.com> ;
+                  foaf:depiction <https://media.licdn.com/dms/image/C4E03AQGT__IVsAnjMw/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=xyQU6tT6pNdgUdFe_O77zdmKj9PfoS4q9FDEcdECq-I> ;
+                  foaf:phone <Tel:+49-341-123456789> ;
+                  foaf:title "Dr. " ;
+                  foaf:status "Senior Researcher" ;
+                  sda:linkedin "https://www.linkedin.com/in/asja-fischer-32007a94" ;
+                  ov:businessCard <http://aksw.org/vCard/Bonn> ;
+                  cv:aboutPerson "Dr. Asja Fischer is a Assistant Professor at the Computer Science Department III of the University of Bonn. Before, she was a post-doctoral researcher at the Montreal Institute for Machine Learning (MILA). Between 2010 and end of 2014, Asja was employed both at the Institute for Neural Computation at the Ruhr-University Bochum and the Department of Computer Science at the University of Copenhagen working on her PhD in Machine Learning, which she defended in Copenhagen in 2014. Before, she studied Biology. Bioinformatics, Mathematics and Cognitive Science at the Ruhr-University Bochum, the Universidade de Lisboa and the University of Osnabrück." .
+                  #sda:publication sdapublication:Publication1 ;
+                  #sda:group sdagroup:DeepLearning .
+                  #foaf:currentProject sdaproject: .
+
 
 sdaperson:NiklasPetersen a foaf:Person, sdatech:associateReseracher ;
                    sda:publicationsTag "petersen" ;
-                   sda:room "" ;
+                   ex:address sda:RoomB3236 ;
                    foaf:familyName "Petersen" ;
                    foaf:name "Niklas Petersen" ;
                    foaf:nick "Niklas" ;
                    foaf:mbox <mailto:niklas.petersen@iais.fraunhofer.de> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C5603AQENygP-OlPPEQ/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=fz7T72T19eYUYhBhs0KNRpJE7lGHFVNi5edYxTdm86Y> ;
+                   foaf:depiction <https://media.licdn.com/dms/image/C5603AQENygP-OlPPEQ/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=qB5c79wJDvPUhN6lFSf80W5iQZTXg7ZY2JtctUulfpE> ;
                    foaf:phone "" ;
                    foaf:firstName "Niklas" ;
                    foaf:title "" ;
@@ -927,40 +848,38 @@ sdaperson:NiklasPetersen a foaf:Person, sdatech:associateReseracher ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Niklas Petersen is a Researcher at the Fraunhofer IAIS." ;
                    sda:group sdagroup:SemanticDataManagement .
 
 sdaperson:MohamedNadjibMami a foaf:Person, sdatech:associateReseracher ;
                    sda:publicationsTag "mami" ;
-                   sda:room "" ;
+                   ex:address sda:RoomB3206 ;
                    foaf:familyName "Nadjib Mami" ;
                    foaf:name "Mohamed Nadjib Mami" ;
                    foaf:nick "Mohamed" ;
-                   foaf:mbox <mailto:mohamed.nadjib.mami@iais.fraunhofer.de> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C5603AQG-3TpJ3MJGVg/profile-displayphoto-shrink_800_800/0?e=1534377600&v=beta&t=eTB--stVl1dqeSFboq_N3S3n7TF4VT7ezQmc8aoo_kc> ;
-                   foaf:phone "" ;
+                   foaf:mbox <mailto:mami@cs.uni-bonn.de> ;
+                   foaf:depiction <https://photos.app.goo.gl/ovPwWx2MgdqyFnxf8> ;
+                   #foaf:phone <Tel:+49 2241 14-3450> ;
                    foaf:firstName "Mohamed" ;
                    foaf:title "" ;
                    foaf:status "Researcher" ;
                    sda:linkedin "https://www.linkedin.com/in/mohamednadjibmami/" ;
-                   sda:website "" ;
-                   sda:twitter "" ;
+                   sda:website "http://mohamednadjibmami.com/" ;
+                   sda:twitter " https://twitter.com/MohamedNadjMAMI" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
-                   cv:aboutPerson "Mohamed Nadjib Mami is a Researcher at the Fraunhofer IAIS." ;
+                   cv:aboutPerson "Mohamed Nadjib Mami is a Researcher at the Fraunhofer IAIS with focus on Big Data and Semantic Web." ;
                    sda:group sdagroup:SemanticDataManagement, sdagroup:DistributedSemanticAnalytics ;
                    foaf:currentProject sdaproject:SANSAStack, sdaproject:BigDataEurope .
 
 sdaperson:LavdimHalilaj a foaf:Person, sdatech:associateReseracher ;
                    sda:publicationsTag "halilaj" ;
-                   sda:room "" ;
+                   ex:address sda:RoomB3236 ;
                    foaf:familyName "Halilaj" ;
                    foaf:name "Lavdim Halilaj" ;
                    foaf:nick "Lavdim" ;
                    foaf:mbox <mailto:lavdim.halilaj@iais.fraunhofer.de> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C4D03AQEiWcUbFtCt0g/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=Bi-zZbEWOEzjf-Q3AefTy72dMRAKp7T6gTm5Kz6Bzts> ;
+                   foaf:depiction <https://media.licdn.com/dms/image/C4D03AQEiWcUbFtCt0g/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=rkD10HaiN9y1GfErJyhNUUS3PRfKMYu0Wwr6PJBJJKI> ;
                    foaf:phone "" ;
                    foaf:firstName "Lavdim" ;
                    foaf:title "" ;
@@ -970,13 +889,11 @@ sdaperson:LavdimHalilaj a foaf:Person, sdatech:associateReseracher ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Lavdim Halilaj is a Researcher at the Fraunhofer IAIS." ;
                    sda:group sdagroup:KnowledgeExtractionAndValidation .
 
 sdaperson:IrlanGrangel a foaf:Person, sdatech:associateReseracher ;
                    sda:publicationsTag "grangel" ;
-                   sda:room "" ;
                    foaf:familyName "Grangel-Gonzales" ;
                    foaf:name "Irlan Grangel-Gonzales" ;
                    foaf:nick "Irlan" ;
@@ -991,18 +908,16 @@ sdaperson:IrlanGrangel a foaf:Person, sdatech:associateReseracher ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Irlan Grangel-Gonzales is a Researcher at the Fraunhofer IAIS." ;
                    sda:group sdagroup:KnowledgeExtractionAndValidation .
 
 sdaperson:DiegoCollarana a foaf:Person, sdatech:associateReseracher ;
                    sda:publicationsTag "collarana" ;
-                   sda:room "" ;
                    foaf:familyName "Collarana" ;
                    foaf:name "Diego Collarana" ;
                    foaf:nick "Diego" ;
                    foaf:mbox <mailto:collaran@iai.uni-bonn.de> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C4D03AQESOW2aT6Y4DQ/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=XlUqygrA4MXUYXq2TxenGZq6APxXaB4WKEC8pYnZcVc> ;
+                   foaf:depiction <https://media.licdn.com/dms/image/C4D03AQESOW2aT6Y4DQ/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=Qm8ClbeXtsvb4QutU5pVQuDXQ74ggrY-0kPbC7IN2d4> ;
                    foaf:phone "" ;
                    foaf:firstName "Diego" ;
                    foaf:title "" ;
@@ -1012,18 +927,16 @@ sdaperson:DiegoCollarana a foaf:Person, sdatech:associateReseracher ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Diego Collarana is a Researcher at the Fraunhofer IAIS." ;
                    sda:group sdagroup:KnowledgeExtractionAndValidation .
 
 sdaperson:KuldeepSingh a foaf:Person, sdatech:associateReseracher ;
                    sda:publicationsTag "singh" ;
-                   sda:room "" ;
                    foaf:familyName "Singh" ;
                    foaf:name "Kuldeep Singh" ;
                    foaf:nick "Kuldeep" ;
                    foaf:mbox <mailto:kuldeep.singh@iais.fraunhofer.de> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C5603AQEbqI0LXtvCGQ/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=6ITF6z_8oHzNrOPcM5tgPnFYw_MbXqqiPZH8FnMkBiE> ;
+                   foaf:depiction <https://media.licdn.com/dms/image/C5603AQEbqI0LXtvCGQ/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=yoSf-Z0j4evYqra3PJj8LkxatSTvX16K-zyCZq1n5QE> ;
                    foaf:phone "" ;
                    foaf:firstName "Kuldeep" ;
                    foaf:title "" ;
@@ -1033,19 +946,17 @@ sdaperson:KuldeepSingh a foaf:Person, sdatech:associateReseracher ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Kuldeep Singh is a Researcher at the Fraunhofer IAIS." ;
                    sda:group sdagroup:SemanticQuestionAnswering;
                    foaf:currentProject sdaproject:AskNow, sdaproject:WDAqua .
 
 sdaperson:JewgeniRose a foaf:Person, sdatech:associateReseracher ;
                    sda:publicationsTag "rose" ;
-                   sda:room "" ;
                    foaf:familyName "Rose" ;
                    foaf:name "Jewgeni Rose" ;
                    foaf:nick "Jewgeni" ;
                    foaf:mbox <mailto:jewgeni.rose@gmx.de> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C5603AQFqctrQYLD36A/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=iOh5GH7aBUQb2WsizmNfza3lWd6JHffI0Ms3GJz1R14> ;
+                   foaf:depiction <https://media.licdn.com/dms/image/C5603AQFqctrQYLD36A/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=ccvN_aNhuqt2jExG3kV6hIZyPXO29_o_miTOOAL8178> ;
                    foaf:phone "" ;
                    foaf:firstName "Jewgeni" ;
                    foaf:title "" ;
@@ -1055,18 +966,16 @@ sdaperson:JewgeniRose a foaf:Person, sdatech:associateReseracher ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Jewgeni Rose is a Researcher at the Fraunhofer IAIS." ;
                    sda:group sdagroup:SemanticQuestionAnswering .
 
 sdaperson:AshwiniJayaKumar a foaf:Person, sdatech:associateReseracher ;
                    sda:publicationsTag "kumar" ;
-                   sda:room "" ;
                    foaf:familyName "Kumar" ;
                    foaf:name "Ashwini Jaya Kumar" ;
                    foaf:nick "Ashwini" ;
                    foaf:mbox <mailto:ashwini.jaya.kumar@iais.fraunhofer.de> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C4D03AQGzqwtouklc6Q/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=rgmFiYkxrC1lcnPEYUscte4-0mrgiDlzdISQPdMIX_g> ;
+                   foaf:depiction <https://media.licdn.com/dms/image/C4D03AQGzqwtouklc6Q/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=E3aY_V3qIfuo3Y4PTRUIMRMWEfa8cWLuFvGpbupEKQQ> ;
                    foaf:phone "" ;
                    foaf:firstName "Ashwini" ;
                    foaf:title "" ;
@@ -1076,12 +985,10 @@ sdaperson:AshwiniJayaKumar a foaf:Person, sdatech:associateReseracher ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Ashwini Jaya Kumar is a Researcher at the Fraunhofer IAIS." .
 
 sdaperson:MiretteElias a foaf:Person, sdatech:associateReseracher ;
                    sda:publicationsTag "elias" ;
-                   sda:room "" ;
                    foaf:familyName "Elias" ;
                    foaf:name "Mirette Elias" ;
                    foaf:nick "Mirette" ;
@@ -1096,12 +1003,11 @@ sdaperson:MiretteElias a foaf:Person, sdatech:associateReseracher ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Mirette Elias is a Researcher at the Fraunhofer IAIS." .
 
 sdaperson:VitalisWiens a foaf:Person, sdatech:associateReseracher ;
                    sda:publicationsTag "wiens" ;
-                   sda:room "" ;
+                   ex:address sda:RoomB3236 ;
                    foaf:familyName "Wiens" ;
                    foaf:name "Vitalis Wiens" ;
                    foaf:nick "Vitalis" ;
@@ -1116,7 +1022,6 @@ sdaperson:VitalisWiens a foaf:Person, sdatech:associateReseracher ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Vitalis Wiens is a Researcher at the Fraunhofer IAIS." .
 
 
@@ -1124,12 +1029,12 @@ sdaperson:VitalisWiens a foaf:Person, sdatech:associateReseracher ;
 
 sdaperson:JuliusKaufmann a foaf:Person, sdatech:studentAssistant ;
                    sda:publicationsTag "kaufmann" ;
-                   sda:room "Pool 1.055" ;
+                   ex:address sda:Room55 ;
                    foaf:familyName "Kaufmann" ;
                    foaf:name "Julius Kaufmann" ;
                    foaf:nick "Julius" ;
                    foaf:mbox <mailto:julius.kaufmann@uni-bonn.de> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C4D03AQGHJTjcSPVEzQ/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=4IAmdQpbLwzu6hG0NS2m-vMs2WizfVud-RPS3Ra_mv8> ;
+                   foaf:depiction <https://media.licdn.com/dms/image/C4D03AQGHJTjcSPVEzQ/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=uzWv1cv2RCwlBIM7XBjQzO11JYaoe0EzhxKxpWzjAbQ> ;
                    foaf:phone "" ;
                    foaf:firstName "Julius" ;
                    foaf:title "" ;
@@ -1139,12 +1044,11 @@ sdaperson:JuliusKaufmann a foaf:Person, sdatech:studentAssistant ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "" .
 
 sdaperson:NileshChakraborty a foaf:Person, sdatech:studentAssistant ;
                    sda:publicationsTag "chakraborty" ;
-                   sda:room "1.052" ;
+                  ex:address sda:Room52 ;
                    foaf:familyName "Chakraborty" ;
                    foaf:name "Nilesh Chakraborty" ;
                    foaf:nick "Nilesh" ;
@@ -1159,17 +1063,17 @@ sdaperson:NileshChakraborty a foaf:Person, sdatech:studentAssistant ;
                    sda:twitter "" ;
                    sda:github "https://github.com/nilesh-c" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
+                   sda:group sdagroup:KnowledgeGraph ;
                    cv:aboutPerson "Nilesh Chakraborty is a Graduate Research Assistant at the Computer Science Department III of the University of Bonn." .
 
 sdaperson:GauravMaheshwari a foaf:Person, sdatech:studentAssistant ;
                    sda:publicationsTag "maheshwari" ;
-                   sda:room "1.064" ;
+                   ex:address sda:Room64 ;
                    foaf:familyName "Maheshwari" ;
                    foaf:name "Gaurav Maheshwari" ;
                    foaf:nick "Gaurav" ;
                    foaf:mbox <mailto:gaurav.rygbee@gmail.com> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C4E03AQGo5qG7ngeQFw/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=l1DsVnwY4H144Slr23qUhH0UStUj6nXu9jMIcfLmHrQ> ;
+                   foaf:depiction <https://media.licdn.com/dms/image/C4E03AQGo5qG7ngeQFw/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=vSJokPPzhKiJ3sHic-gJnYiEpuWs7_uQIKb2GKs0a1k> ;
                    foaf:phone "" ;
                    foaf:firstName "Gaurav" ;
                    foaf:title "" ;
@@ -1179,12 +1083,12 @@ sdaperson:GauravMaheshwari a foaf:Person, sdatech:studentAssistant ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
+                   sda:group sdagroup:SemanticQuestionAnswering ;
                    cv:aboutPerson "Gaurav Maheshwari is a Student Assistant at the Computer Science Department III of the University of Bonn." .
 
 sdaperson:PriyanshTrivedi a foaf:Person, sdatech:studentAssistant ;
                    sda:publicationsTag "trivedi" ;
-                   sda:room "1.064" ;
+                   ex:address sda:Room64 ;
                    foaf:familyName "Trivedi" ;
                    foaf:name "Priyansh Trivedi" ;
                    foaf:nick "Priyansh" ;
@@ -1199,17 +1103,16 @@ sdaperson:PriyanshTrivedi a foaf:Person, sdatech:studentAssistant ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
+                   sda:group sdagroup:SemanticQuestionAnswering ;
                    cv:aboutPerson "Priyansh Trivedi is a Student Assistant at the Computer Science Department III of the University of Bonn." .
 
 sdaperson:JeanHernandez a foaf:Person, sdatech:studentAssistant ;
                    sda:publicationsTag "hernandez" ;
-                   sda:room "" ;
                    foaf:familyName "Hernandez" ;
                    foaf:name "Jean Hernandez" ;
                    foaf:nick "Jean" ;
-                   foaf:mbox <jeanhernandezmeze@gmail.com> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C5603AQGEGSnXzRi_Eg/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=W0h545FlJaSoBqr4bmMr1Ro87I8UbFZCoxBxtqpAr7w> ;
+                   foaf:mbox <mailto:jeanhernandezmeze@gmail.com> ;
+                   foaf:depiction <https://media.licdn.com/dms/image/C5603AQGEGSnXzRi_Eg/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=IrDuME4fydR2vTHcpYERSyMijVH_46IMSTXY6NDT91I> ;
                    foaf:phone "" ;
                    foaf:firstName "Jean" ;
                    foaf:title "" ;
@@ -1219,17 +1122,15 @@ sdaperson:JeanHernandez a foaf:Person, sdatech:studentAssistant ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Jean Hernandez is a Student Assistant at the Computer Science Department III of the University of Bonn.".
 
 sdaperson:GabrielGimenez a foaf:Person, sdatech:studentAssistant ;
                    sda:publicationsTag "gimenez" ;
-                   sda:room "" ;
                    foaf:familyName "Gimenez" ;
                    foaf:name "Gabriel Gimenez" ;
                    foaf:nick "Gabriel" ;
                    foaf:mbox <mailto:12-11006@usb.ve> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C4E03AQHEqEGnP9DUWw/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=2Pezw1b6A9_vdFeAm12u_oVMlFkphcWqH3bv4YH2zAI> ;
+                   foaf:depiction <https://media.licdn.com/dms/image/C4E03AQHEqEGnP9DUWw/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=Um9_oJ-f3G-UJfXxPRnE4Id_jE7PfIZdR5dUrBxap-o> ;
                    foaf:phone "" ;
                    foaf:firstName "Gabriel" ;
                    foaf:title "" ;
@@ -1239,12 +1140,10 @@ sdaperson:GabrielGimenez a foaf:Person, sdatech:studentAssistant ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Gabriel Gimenez is a Student Assistant at the Computer Science Department III of the University of Bonn.".
 
 sdaperson:GuillermoBetancourt a foaf:Person, sdatech:studentAssistant ;
                    sda:publicationsTag "betancourt" ;
-                   sda:room "" ;
                    foaf:familyName "Betancourt" ;
                    foaf:name "Guillermo Betancourt" ;
                    foaf:nick "Guillermo" ;
@@ -1259,12 +1158,10 @@ sdaperson:GuillermoBetancourt a foaf:Person, sdatech:studentAssistant ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Guillermo Betancourt is a Student Assistant at the Computer Science Department III of the University of Bonn." .
 
 sdaperson:YersonRoa a foaf:Person, sdatech:studentAssistant ;
                    sda:publicationsTag "roa" ;
-                   sda:room "" ;
                    foaf:familyName "Roa" ;
                    foaf:name "Yerson Roa" ;
                    foaf:nick "Yerson" ;
@@ -1279,17 +1176,16 @@ sdaperson:YersonRoa a foaf:Person, sdatech:studentAssistant ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Yerson Roa is a Student Assistant at the Computer Science Department III of the University of Bonn." .
 
 sdaperson:DebayanBanerjee a foaf:Person, sdatech:studentAssistant ;
                    sda:publicationsTag "banerjee" ;
-                   sda:room "Pool 1.055" ;
+                   ex:address sda:Room55 ;
                    foaf:familyName "Banerjee" ;
                    foaf:name "Debayan Banerjee" ;
                    foaf:nick "Debayan" ;
                    foaf:mbox <mailto:debayan@uni-bonn.de> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C5103AQFQ9hiprLLgOQ/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=SHDykzy-20PJtFKosE2BgpBmC3O_K2nkN9lfe8q18TA> ;
+                   foaf:depiction <https://media.licdn.com/dms/image/C5103AQFQ9hiprLLgOQ/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=B-xjJ7mzJVmJ0KGEuMtxtLs2nYUPn2jKoHcIAcmyBik> ;
                    foaf:phone "" ;
                    foaf:firstName "Debayan" ;
                    foaf:title "" ;
@@ -1299,12 +1195,12 @@ sdaperson:DebayanBanerjee a foaf:Person, sdatech:studentAssistant ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
+                   sda:group sdagroup:SemanticQuestionAnswering ;
                    cv:aboutPerson "Debayan Banerjee is a Student Assistant at the Computer Science Department III of the University of Bonn." .
 
 sdaperson:MingQu a foaf:Person, sdatech:studentAssistant ;
                    sda:publicationsTag "qu" ;
-                   sda:room "Pool 1.055" ;
+                   ex:address sda:Room55 ;
                    foaf:familyName "Qu" ;
                    foaf:name "Ming Qu" ;
                    foaf:nick "Ming" ;
@@ -1319,12 +1215,11 @@ sdaperson:MingQu a foaf:Person, sdatech:studentAssistant ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Ming Qu is a Student Assistant at the Computer Science Department III of the University of Bonn." .
 
 sdaperson:AsifKhan a foaf:Person, sdatech:studentAssistant ;
                    sda:publicationsTag "khan" ;
-                   sda:room "Pool 1.055" ;
+                   ex:address sda:Room55 ;
                    foaf:familyName "Khan" ;
                    foaf:name "Asif Khan" ;
                    foaf:nick "ASif" ;
@@ -1339,12 +1234,11 @@ sdaperson:AsifKhan a foaf:Person, sdatech:studentAssistant ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Asif Khan is a Student Assistant at the Computer Science Department III of the University of Bonn." .
 
 sdaperson:PiyushChawla a foaf:Person, sdatech:studentAssistant ;
                    sda:publicationsTag "chawla" ;
-                   sda:room "Pool 1.055" ;
+                   ex:address sda:Room55 ;
                    foaf:familyName "Chawla" ;
                    foaf:name "Piyush Chawla" ;
                    foaf:nick "Piyush" ;
@@ -1359,18 +1253,16 @@ sdaperson:PiyushChawla a foaf:Person, sdatech:studentAssistant ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Piyush Chawla is a Student Assistant at the Computer Science Department III of the University of Bonn." .
 
 sdaperson:MehdiAli a foaf:Person, sdatech:studentAssistant ;
                    sda:publicationsTag "ali" ;
-                   sda:room "1.051" ;
+                   ex:address sda:Room51 ;
                    foaf:familyName "Ali" ;
                    foaf:name "Mehdi Ali" ;
                    foaf:nick "Mehdi" ;
-                   foaf:mbox <mailto:ali-mehdi@live.de> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C5603AQHSKaiNFWztWQ/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=7_hb8ss5Ca2bkhmornMXN2W7RhTDWl1BS2kl7uJUf8E> ;
-                   foaf:phone "" ;
+                   foaf:mbox <mailto:mehdi.ali@cs.uni-bonn.de> ;
+                   foaf:depiction <https://media.licdn.com/dms/image/C5603AQHSKaiNFWztWQ/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=Xgo56kUNucAd4K_aQIIGYkXoNpfv82ovvz7IzS6youY> ;
                    foaf:firstName "Mehdi" ;
                    foaf:title "" ;
                    foaf:status "Student Assistant" ;
@@ -1379,12 +1271,11 @@ sdaperson:MehdiAli a foaf:Person, sdatech:studentAssistant ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
+                   sda:group sdagroup:KnowledgeGraph ;
                    cv:aboutPerson "Mehdi Ali is a Student Assistant at the Computer Science Department III of the University of Bonn." .
 
 sdaperson:AdrianBajraktari a foaf:Person, sdatech:studentAssistant ;
                    sda:publicationsTag "bajraktari" ;
-                   sda:room "" ;
                    foaf:familyName "Bajraktari" ;
                    foaf:name "Adrian Bajraktari" ;
                    foaf:nick "Adrian" ;
@@ -1399,14 +1290,12 @@ sdaperson:AdrianBajraktari a foaf:Person, sdatech:studentAssistant ;
                    sda:facebook "https://facebook.com/adrian.bajraktari.3" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "Adrian Bajraktari is a Student Assistant at the Computer Science Department III of the University of Bonn." .
 
 ##############################Interns####################################
 
 sdaperson:KathanKashiparekh a foaf:Person, sdatech:intern ;
                    sda:publicationsTag "kashiparekh" ;
-                   sda:room "" ;
                    foaf:familyName "Kashiparekh" ;
                    foaf:name "Kathan Kashiparek" ;
                    foaf:nick "Kathan" ;
@@ -1421,17 +1310,15 @@ sdaperson:KathanKashiparekh a foaf:Person, sdatech:intern ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "" .
 
 sdaperson:AnikethReddy a foaf:Person, sdatech:intern ;
                    sda:publicationsTag "reddy" ;
-                   sda:room "" ;
-                   foaf:familyName "Aniketh" ;
+                   foaf:familyName "Reddy" ;
                    foaf:name "Aniketh Reddy" ;
                    foaf:nick "Aniketh" ;
                    foaf:mbox <mailto:anikethjr@gmail.com> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C5603AQE11UwC64C41w/profile-displayphoto-shrink_800_800/0?e=1534377600&v=beta&t=RitrIfVr3zDADo0ELEGZbxUdeeMijtwkJImq36euFJ0> ;
+                   foaf:depiction <https://media.licdn.com/dms/image/C5103AQEJSjCfirZNyQ/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=Ga5uUBX4YYu94abJO-Y53spBH5Kdiyeu0rb2JniDVyI> ;
                    foaf:phone "" ;
                    foaf:firstName "Aniketh" ;
                    foaf:title "" ;
@@ -1441,14 +1328,12 @@ sdaperson:AnikethReddy a foaf:Person, sdatech:intern ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "" .
 
 ##############################Former Members#############################
 
 sdaperson:FrankNietzsche a foaf:Person, sdatech:formerMember ;
                    sda:publicationsTag "nietzsche" ;
-                   sda:room "" ;
                    foaf:familyName "Nietzsche" ;
                    foaf:name "Frank Nietzsche" ;
                    foaf:nick "Frank" ;
@@ -1463,12 +1348,10 @@ sdaperson:FrankNietzsche a foaf:Person, sdatech:formerMember ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "" .
 
 sdaperson:BastianHaarmann a foaf:Person, sdatech:formerMember ;
                    sda:publicationsTag "haarmann" ;
-                   sda:room "" ;
                    foaf:familyName "Haarmann" ;
                    foaf:name "Bastian Haarmann" ;
                    foaf:nick "Bastian" ;
@@ -1483,12 +1366,10 @@ sdaperson:BastianHaarmann a foaf:Person, sdatech:formerMember ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "" .
 
 sdaperson:HenningPetzka a foaf:Person, sdatech:formerMember ;
                    sda:publicationsTag "petzka" ;
-                   sda:room "" ;
                    foaf:familyName "Petzka" ;
                    foaf:name "Henning Petzka" ;
                    foaf:nick "Henning" ;
@@ -1503,12 +1384,10 @@ sdaperson:HenningPetzka a foaf:Person, sdatech:formerMember ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "" .
 
 sdaperson:MohamedSherif a foaf:Person, sdatech:formerMember ;
                    sda:publicationsTag "sherif" ;
-                   sda:room "" ;
                    foaf:familyName "Sherif" ;
                    foaf:name "Mohamed Sherif" ;
                    foaf:nick "Mohamed" ;
@@ -1523,12 +1402,10 @@ sdaperson:MohamedSherif a foaf:Person, sdatech:formerMember ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "" .
 
 sdaperson:TiansiDong a foaf:Person, sdatech:formerMember ;
                    sda:publicationsTag "dong" ;
-                   sda:room "" ;
                    foaf:familyName "Dong" ;
                    foaf:name "Tiansi Dong" ;
                    foaf:nick "Tiansi" ;
@@ -1543,17 +1420,15 @@ sdaperson:TiansiDong a foaf:Person, sdatech:formerMember ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "" .
 
 sdaperson:VinayModi a foaf:Person, sdatech:formerMember ;
                    sda:publicationsTag "modi" ;
-                   sda:room "" ;
                    foaf:familyName "Modi" ;
                    foaf:name "Vinay Modi" ;
                    foaf:nick "Vinay" ;
                    foaf:mbox <mailto:tian1shi2@gmail.com> ;
-                   foaf:depiction <https://media.licdn.com/dms/image/C5103AQHzzMl9E_wadg/profile-displayphoto-shrink_800_800/0?e=1528711200&v=beta&t=a7Xya1dxi64z60nVViGRD0ZcjfdhKEV25EXpzIzD4Ls> ;
+                   foaf:depiction <https://media.licdn.com/dms/image/C5103AQHzzMl9E_wadg/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=HpNTnXXZfQbl3p_ZV8_nk8wroLVEj7tx-bRVj6COZd8> ;
                    foaf:phone "" ;
                    foaf:firstName "Vinai" ;
                    foaf:title "" ;
@@ -1563,8 +1438,45 @@ sdaperson:VinayModi a foaf:Person, sdatech:formerMember ;
                    sda:twitter "" ;
                    sda:github "" ;
                    ov:businessCard <http://aksw.org/vCard/Bonn> ;
-                   schema:location <http://sda.tech/Address/SDA> ;
                    cv:aboutPerson "" .
+
+sdaperson:FabrizioOrlandi a foaf:Person, sdatech:formerMember ;
+                  sda:publicationsTag "orlandi" ;
+                  ex:address sda:RoomC326 ;
+                  foaf:firstName "Fabrizio" ;
+                  foaf:familyName "Orlandi" ;
+                  foaf:name "Dr. Fabrizio Orlandi" ;
+                  foaf:mbox <mailto:fabrizio.orlandi@iais.fraunhofer.de> ;
+                  foaf:depiction <https://media.licdn.com/dms/image/C5603AQHc_LUVniMW7g/profile-displayphoto-shrink_800_800/0?e=1538006400&v=beta&t=w5NBDi0M7GCpIGRUJYuxnZCWOP6MkoGs9jLdBTiLJuE> ;
+                  #foaf:phone <Tel:+49-341-123456789> ;
+                  foaf:title "Dr. " ;
+                  foaf:status "Senior Researcher" ;
+                  sda:linkedin "https://www.linkedin.com/in/fabriziorlandi/" ;
+                  ov:businessCard <http://aksw.org/vCard/Bonn> ;
+                  cv:aboutPerson "Dr. Fabrizio Orlandi is a Senior Researcher at the University of Bonn." .
+                  #sda:publication sdapublication:Publication1 ;
+                  #sda:group sdagroup:KnowledgeExtractionAndValidation ;
+                  #foaf:currentProject sdaproject:SLIPO, sdaproject:LinDA .
+
+sdaperson:LuisPauloGarcia a foaf:Person, sdatech:formerMember ;
+                  rdfs:seeAlso <http://aksw.org/LuisGarcia> ;
+                  owl:sameAs <http://aksw.org/LuisGarcia> ;
+                  sda:publicationsTag "garcia" ;
+                  ex:address sda:RoomA108 ;
+                  foaf:firstName "Luís" ;
+                  foaf:familyName "Paulo Garcia" ;
+                  foaf:name "Dr. Luís Paulo Garcia" ;
+                  foaf:mbox <mailto:shariat@cs.uni-bonn.de> ;
+                  foaf:depiction <http://ldap.aksw.org/pic/sn/Faina%20Garcia> ;
+                  foaf:phone <Tel:+49-341-123456789> ;
+                  foaf:title "Dr. " ;
+                  foaf:status "Senior Researcher" ;
+                  #sda:linkedin "" ;
+                  ov:businessCard <http://aksw.org/vCard/Bonn> ;
+                  cv:aboutPerson "Dr. Luís Paulo Garcia is a Senior Researcher at the University of Leipzig." .
+                  #sda:publication sdapublication:Publication1 ;
+                  #sda:group sdagroup:SoftwareEngineeringForDataScience .
+                  #foaf:currentProject sdaproject: .
 
 #######################################
 ##########Group Model##################
@@ -1575,7 +1487,6 @@ sdagroup:DistributedSemanticAnalytics a aiiso:ResearchGroup, sdatech:Group ;
                                 rdfs:label "Distributed Semantic Analytics" ;
                                 foaf:member sdaperson:JensLehmann, sdaperson:GezimSejdiu, sdaperson:HajiraJabeen, sdaperson:HarshThakkar, sdaperson:AnisaRula ;
                                 dbo:leader sdaperson:HajiraJabeen ;
-                                foaf:pastProject sdaproject:SHORE, sdaproject:WAVE ;
                                 foaf:depiction <https://images.freecreatives.com/wp-content/uploads/2016/02/Download-Optopus-Logo-For-Free.jpeg> ;
                                 foaf:currentProject sdaproject:DLLearner, sdaproject:BigDataEurope, sdaproject:SANSAStack, sdaproject:Boost40 ;
                                 dct:abstract "Aims to develop scalable analytics algorithms based on Apache Spark and Apache Flink for analysing large scale RDF datasets" ;
@@ -1617,7 +1528,6 @@ sdagroup:SemanticDataManagement a aiiso:ResearchGroup, sdatech:Group ;
                                 foaf:member sdaperson:JensLehmann, sdaperson:ChristophLange ;
                                 dbo:leader sdaperson:ChristophLange, sdaperson:SteffenLohmann ;
                                 foaf:depiction <https://images.freecreatives.com/wp-content/uploads/2016/02/Download-Optopus-Logo-For-Free.jpeg> ;
-                                foaf:pastProject sdaproject:SHORE, sdaproject:WAVE ;
                                 foaf:currentProject sdaproject:BigDataEurope ;
                                 dct:description "The group's research focus is on knowledge and data representation, integration, and management based on semantic technologies." ;
                                 dct:abstract "Focuses on Knowledge and data representation, integration, and management based on semantic technologies." ;
@@ -1628,10 +1538,9 @@ sdagroup:SemanticDataManagement a aiiso:ResearchGroup, sdatech:Group ;
 ##Semantic Question Answering
 sdagroup:SemanticQuestionAnswering a aiiso:ResearchGroup, sdatech:Group ;
                                 rdfs:label "Semantic Question Answering" ;
-                                foaf:member sdaperson:JensLehmann, sdaperson:MohnishDubey, sdaperson:IoannaLytra, sdaperson:HamidZafar, sdaperson:DebanjanChaudhuri ;
+                                foaf:member sdaperson:JensLehmann, sdaperson:MohnishDubey, sdaperson:IoannaLytra, sdaperson:HamidZafar, sdaperson:DebanjanChaudhuri, sdaperson:GiulioNapolitano ;
                                 dbo:leader sdaperson:GiulioNapolitano, sdaperson:IoannaLytra ;
                                 foaf:depiction <https://images.freecreatives.com/wp-content/uploads/2016/02/Download-Optopus-Logo-For-Free.jpeg> ;
-                                foaf:pastProject sdaproject:SHORE, sdaproject:WAVE ;
                                 foaf:currentProject sdaproject:AskNow, sdaproject:WDAqua ;
                                 dct:description "The use of Semantic Web technologies led to an increasing number of structured data published on the Web. Despite the advances in question answering systems retrieving the desired information from structured sources is still a substantial challenge." ;
                                 dct:abstract "Make use of Semantic Web technologies and AI for better and advanced  question answering & dialogue systems" ;
@@ -1642,16 +1551,30 @@ sdagroup:SemanticQuestionAnswering a aiiso:ResearchGroup, sdatech:Group ;
 ##Software Engineering for Data Science
 sdagroup:SoftwareEngineeringForDataScience a aiiso:ResearchGroup, sdatech:Group ;
                                 rdfs:label "Software Engineering for Data Science" ;
-                                foaf:member sdaperson:JensLehmann, sdaperson:GuenterKniesel, sdaperson:HamedShariatYazdi, sdaperson:LuisPauloGarcia ;
-                                dbo:leader sdaperson:GuenterKniesel, sdaperson:HamedShariatYazdi ;
+                                foaf:member sdaperson:JensLehmann, sdaperson:GuenterKniesel ;
+                                dbo:leader sdaperson:GuenterKniesel ;
                                 foaf:depiction <https://images.freecreatives.com/wp-content/uploads/2016/02/Download-Optopus-Logo-For-Free.jpeg> ;
                                 foaf:currentProject sdaproject:SANSAStack ;
-                                foaf:pastProject sdaproject:SHORE, sdaproject:WAVE ;
                                 dct:description """The group focuses on combining Semantic Web and Software Engineering technologies to develop novel methods, techniques, and tools that advance the way in which software is designed, synthetised and assessed.""" ;
                                 dct:abstract "Researches on how data and software engineering methods can be aligned with Data Science." ;
                                 sda:publication sdapublication:Publication1 ;
                                 sda:imageclass "fa fa-cogs" ;
                                 sda:shortcut "seds" .
+
+##Knowledge Graph
+sdagroup:KnowledgeGraph a aiiso:ResearchGroup, sdatech:Group ;
+                                rdfs:label "Knowledge Graph" ;
+                                foaf:member sdaperson:JensLehmann, sdaperson:HamedShariatYazdi, sdaperson:AfshinSadeghi, sdaperson:MojtabaNayyeri, sdaperson:MehdiAli ;
+                                dbo:leader sdaperson:HamedShariatYazdi ;
+                                foaf:depiction <https://images.freecreatives.com/wp-content/uploads/2016/02/Download-Optopus-Logo-For-Free.jpeg> ;
+                                foaf:currentProject sdaproject:SANSAStack ;
+                                #foaf:pastProject ;
+                                dct:description """The group focuses on research over knowledge graph, machine learning and artificial intelligence.""" ;
+                                dct:abstract "The group focuses on research over knowledge graph, machine learning and artificial intelligence." ;
+                                sda:publication sdapublication:Publication1 ;
+                                sda:imageclass "fa fa-cogs" ;
+                                sda:shortcut "skg" .
+
 
 ##Structured Machine Learning
 sdagroup:StructuredMachineLearning a aiiso:ResearchGroup, sdatech:Group ;
@@ -1660,7 +1583,6 @@ sdagroup:StructuredMachineLearning a aiiso:ResearchGroup, sdatech:Group ;
                                 dbo:leader sdaperson:JensLehmann ;
                                 foaf:depiction <https://images.freecreatives.com/wp-content/uploads/2016/02/Download-Optopus-Logo-For-Free.jpeg> ;
                                 foaf:currentProject sdaproject:DLLearner, sdaproject:SMLBench ;
-                                foaf:pastProject sdaproject:SHORE, sdaproject:WAVE ;
                                 dct:description "The group focuses on combining Semantic Web and supervised Machine Learning technologies. The goal is to improve both quality and quantity of available knowledge by extracting, analysing, enriching and linking existing data. The group also provides several established open source tools, frameworks and demonstrators." ;
                                 dct:abstract "Combines Semantic Web and supervised ML technologies in order to improve both quality and quantity of available knowledge." ;
                                 sda:publication sdapublication:Publication1 ;
@@ -1671,9 +1593,8 @@ sdagroup:StructuredMachineLearning a aiiso:ResearchGroup, sdatech:Group ;
 ##Smart Services
 sdagroup:SmartServices a aiiso:ResearchGroup, sdatech:Group ;
                                 rdfs:label "Smart Services" ;
-                                foaf:member sdaperson:JensLehmann, sdaperson:FabrizioOrlandi, sdaperson:SimonScerri ;
+                                foaf:member sdaperson:JensLehmann, sdaperson:SimonScerri ;
                                 dbo:leader sdaperson:MariaMaleshkova, sdaperson:SimonScerri  ;
-                                foaf:pastProject sdaproject:SHORE, sdaproject:WAVE ;
                                 foaf:currentProject sdaproject:SLIPO, sdaproject:BigDataEurope, sdaproject:Boost40 ;
                                 dct:description "Semantic services and their composition, applications in IoT." ;
                                 dct:abstract "Semantic services and their composition, applications in IoT." ;
@@ -2266,19 +2187,19 @@ sdaproject:SAML a foaf:Project, sdatech:incubator ;
                  #sdapublication:publication sdapublication:Publication1 ;
                  sda:status "active" .
 
-sdaproject:TFVKG a foaf:Project, sdatech:incubator ;
-                 rdfs:label "Tensor Factorisation and Visualization for Knowledge Graphs" ;
-                 ex:description "Tensor Factorisation and Visualization for Knowledge Graphs." ;
-                 ex:longdescription "" ;
-                 foaf:member sda:JensLehmann ;
-                 foaf:homepage "undefined" ;
-                 foaf:depiction "" ;
-                 sda:twitter "undefined" ;
-                 sda:source "undefined" ;
-                 sda:download "undefined" ;
-                 doap:maintainer sda:JensLehmann ;
-                 #sdapublication:publication sdapublication:Publication1 ;
-                 sda:status "active" .
+#sdaproject:TFVKG a foaf:Project, sdatech:incubator ;
+#                 rdfs:label "Tensor Factorisation and Visualization for Knowledge Graphs" ;
+#                 ex:description "Tensor Factorisation and Visualization for Knowledge Graphs." ;
+#                 ex:longdescription "" ;
+#                 foaf:member sda:JensLehmann ;
+#                 foaf:homepage "undefined" ;
+#                 foaf:depiction "" ;
+#                 sda:twitter "undefined" ;
+#                 sda:source "undefined" ;
+#                 sda:download "undefined" ;
+#                 doap:maintainer sda:JensLehmann ;
+#                 #sdapublication:publication sdapublication:Publication1 ;
+#                 sda:status "active" .
 
 
 #######################################
@@ -2297,7 +2218,7 @@ sdapartner:AgroKnow a foaf:Organization, sdatech:industryPartner, sdatech:Partne
                               sdaproject:SemaGrow ;
                               foaf:mbox <mailto:info@agroknow.com> ;
                               rdfs:label "THE INDUsTRY LEADER 2.0" ;
-                              foaf:phone <tel:+30-210-6897905> ;
+                              foaf:phone <Tel:+30-210-6897905> ;
                               schema:location <http://www.agroknow.com/agroknow/contact> ;
                               dct:abstract "Agro-Know is a fast growing SME specialized inagro-biodiversity knowledge management with a clearresearch focus on knowledge-intensive technologyinnovation for agriculture, food and biodiversity. " .
 
@@ -2310,7 +2231,7 @@ sdapartner:AGTinternational a foaf:Organization, sdatech:industryPartner, sdatec
                               sdaproject:TrafficIncidentManagement,
                               sdaproject:IndustrialIoT ;
                               rdfs:label "AGT International GmbH" ;
-                              foaf:phone <tel:+41-58-2018000> ;
+                              foaf:phone <Tel:+41-58-2018000> ;
                               foaf:depiction <https://www.agtinternational.com/wp-content/themes/AGT/homepage/agt3.png> ;
                               schema:location <https://www.agtinternational.com/contact/> ;
                               dct:abstract "AGT and its family of companies provide advanced IoT solution to customers in different industries all over the world. " .
@@ -2324,7 +2245,7 @@ sdapartner:AI4BG a foaf:Organization, sdatech:industryPartner, sdatech:Partner ;
                               sdaproject:LiDaKrA ;
                               foaf:mbox <mailto:info@ai4bd.com> ;
                               rdfs:label "Artificial Intelligence for Big Data" ;
-                              foaf:phone <tel:+49-341-2155910> ;
+                              foaf:phone <Tel:+49-341-2155910> ;
                               foaf:depiction <http://ai4bd.com/wp-content/uploads/2016/09/final-logo-ai4bd.png> ;
                               schema:location <http://ai4bd.com/?page_id=10> ;
                               dct:abstract "ai4bd is working with business, scientists, researchers, and governments to solve business problems. " .
@@ -2372,7 +2293,7 @@ sdapartner:AthenaRC a foaf:Organization, sdatech:academicPartner, sdatech:Partne
                               sdaproject:EHRI ;
                               foaf:mbox <mailto:contact@imis.athena-innovation.gr> ;
                               rdfs:label "Information Management Systems Institute Athena" ;
-                              foaf:phone <tel:+30-210-6875403> ;
+                              foaf:phone <Tel:+30-210-6875403> ;
                               schema:location <http://www.imsi.athenarc.gr/en/contact> ;
                               dct:abstract "The mission of IMSI is to conduct research, develop innovative applications and products, and provide services in the areas of data management and large scale information systems. " .
 
@@ -2381,7 +2302,7 @@ sdapartner:Atos a foaf:Organization, sdatech:industryPartner, sdatech:Partner ;
                             #  foaf:currentProject sdaproject:QROWD;
                             #  foaf:mbox <mailto:info@ai4bd.com> ;
                               rdfs:label "Atos" ;
-                            #  foaf:phone <tel:+44-207-8304444> ;
+                            #  foaf:phone <Tel:+44-207-8304444> ;
                               foaf:depiction <https://atos.net/wp-content/themes/atos/images/atos-logo-menu-bar.png> ;
                               schema:location <https://atos.net/en-gb/united-kingdom/contact-us-uk> ;
                               dct:abstract "Atos' keywords are digital transformation, innovation and value creation, both for our own company and for our clients.. " .
@@ -2400,7 +2321,7 @@ sdapartner:cessda a foaf:Organization, sdatech:academicPartner, sdatech:Partner 
                               sdaproject:CESSDAPPP ;
                               foaf:mbox <mailto:cessda@cessda.eu> ;
                               rdfs:label "Consortium of European Social Science Data Archives" ;
-                              foaf:phone <tel:+47-55-583648> ;
+                              foaf:phone <Tel:+47-55-583648> ;
                               schema:location <https://www.cessda.eu/Contact> ;
                               dct:abstract "CESSDA provides large scale, integrated and sustainable data services to the social sciences. It brings together social science data archives across Europe, with the aim of promoting the results of social science research and supporting national and international research and cooperation. " .
 
@@ -2408,7 +2329,7 @@ sdapartner:ComuneDiTrento a foaf:Organization, sdatech:industryPartner, sdatech:
                               foaf:homepage <http://www.comune.trento.it/> ;
                               foaf:mbox <mailto:comurp@comune.trento.it> ;
                               rdfs:label "Comune Di Trento" ;
-                              foaf:phone <tel:+39-461-884111> ;
+                              foaf:phone <Tel:+39-461-884111> ;
                               foaf:depiction <http://www.comune.trento.it/var/comunetn/storage/images/10010715-611-ita-IT/Trento-Citta-Sito-ufficiale-del-Comune-di-Trento_header_only_logo.png> ;
                               schema:location <http://www.comune.trento.it/> ;
                               dct:abstract "Trento is an Italian town of ca. 116,000 inhabitants located in Trentino-Alto Adige/Südtirol. It has historically represented an ideal bridge between the Italian and the German culture. Trento is positioned at the top of Italian cities’ rankings concerning aspects like the education system, business and job opportunities, quality of life, the satisfaction of public services and environmental sustainability. " .
@@ -2440,7 +2361,7 @@ sdapartner:CRES a foaf:Organization, sdatech:academicPartner, sdatech:Partner ;
                               sdaproject:CESSDAPPP ;
                               foaf:mbox <mailto:cres@cres.gr> ;
                               rdfs:label "Center for renewable Energy Sources & Saving" ;
-                              foaf:phone <tel:+30-210-6603300> ;
+                              foaf:phone <Tel:+30-210-6603300> ;
                               foaf:depiction <http://www.cres.gr/cres/images/demo/cres-logo.png> ;
                               schema:location <http://www.cres.gr/cres/images/demo/map_cres_uk.jpg> .
                               #dct:abstract "CESSDA provides large scale, integrated and sustainable data services to the social sciences. It brings together social science data archives across Europe, with the aim of promoting the results of social science research and supporting national and international research and cooperation. " .
@@ -2454,7 +2375,7 @@ sdapartner:ERCIM a foaf:Organization, sdatech:academicPartner, sdatech:Partner ;
                               sdaproject:Vre4eic ;
                               foaf:mbox <mailto:contact@ercim.eu> ;
                               rdfs:label "European Research Consortium for Informatics and Mathematics" ;
-                              foaf:phone <tel:+30-210-6603300> ;
+                              foaf:phone <Tel:+30-210-6603300> ;
                               foaf:depiction: <https://www.ercim.eu/images/logo-alt.png> ;
                               schema:location <https://www.ercim.eu/contact> ;
                               dct:abstract "ERCIM - the European Research Consortium for Informatics and Mathematics - aims to foster collaborative work within the European research community and to increase co-operation with European industry. Leading European research institutes are members of ERCIM. " .
@@ -2464,7 +2385,7 @@ sdapartner:SatCen a foaf:Organization, sdatech:industryPartner, sdatech:Partner 
                               foaf:currentProject sdaproject:BigDataEurope;
                               foaf:mbox <mailto:WEU.RATU@SATCEN.EUROPA.EU> ;
                               rdfs:label "European Union Satellite Centre" ;
-                              foaf:phone <tel:+32-2-230-5787> ;
+                              foaf:phone <Tel:+32-2-230-5787> ;
                               foaf:depiction <https://www.satcen.europa.eu/assets/img/logo_top_3.png> ;
                               schema:location <https://www.satcen.europa.eu/contact> ;
                               dct:abstract "The Centre supports the decision making of the European Union in the field of the Common Foreign and Security Policy (CFSP), in particular the Common Security and Defence Policy (CSDP), including European Union crisis management missions and operations, by providing products and services resulting from the exploitation of relevant space assets and collateral data, including satellite imagery and aerial imagery, and related services. " .
@@ -2474,7 +2395,7 @@ sdapartner:FAO a foaf:Organization, sdatech:industryPartner, sdatech:Partner ;
                               foaf:currentProject sdaproject:DigitalServicesinAfrica;
                               foaf:mbox <mailto:FAO-HQ@fao.org> ;
                               rdfs:label "Food and Agriculture Organization of the United Nations" ;
-                              foaf:phone <tel:+39-06-57051> ;
+                              foaf:phone <Tel:+39-06-57051> ;
                               foaf:depiction <http://www.fao.org/fileadmin/templates/faoboot/css/img/fao-logo-white.svg> ;
                               schema:location <http://www.fao.org/about/who-we-are/worldwide-offices/en/> ;
                               dct:abstract "The Food and Agriculture Organization (FAO) is specialized agency of the United Nations that leads international efforts to defeat hunger. Their goal is to achieve food security for all and make sure that people have regular access to enough high-quality food to lead active, healthy lives. With over 194 member states, FAO works in over 130 countries worldwide. " .
@@ -2483,7 +2404,7 @@ sdapartner:FORTH a foaf:Organization, sdatech:academicPartner, sdatech:Partner ;
                               foaf:homepage <https://www.forth.gr/> ;
                               foaf:mbox <mailto:central@admin.forth.gr> ;
                               rdfs:label "Foundation for Research and Technology Hellas" ;
-                              foaf:phone <tel:+30-2810-3915002> ;
+                              foaf:phone <Tel:+30-2810-3915002> ;
                               foaf:depiction <https://www.forth.gr/_gfx/bg_index_logo_en.png> ;
                               schema:location <http://www.forth.gr/index_main.php?c=81&l=e> ;
                               dct:abstract "The Foundation for Research and Technology-Hellas (FORTH), established in 1983, is one of the largest research centers in Greece with well organized facilities, highly qualified personnel and a reputation as a top-level research foundation worldwide. FORTH reports to the General Secretariat for Research and Technology of the Hellenic Ministry of Education, Research and Religious Affairs. The Foundation, with headquarters in Heraklion, includes six Research Institutes in different parts of the country. " .
@@ -2495,7 +2416,7 @@ sdapartner:FraunhoferIAIS a foaf:Organization, sdatech:academicPartner, sdatech:
                               sdaproject:FuhSen ;
                               foaf:mbox <mailto:info@iais.fraunhofer.de> ;
                               rdfs:label "Fraunhofer Institute for Intelligent Analysis nad Information Systems IAIS" ;
-                              foaf:phone <tel:+49-2241-143000> ;
+                              foaf:phone <Tel:+49-2241-143000> ;
                               schema:location <https://www.iais.fraunhofer.de/en/footer/contact.html> ;
                               dct:abstract "Fraunhofer IAIS is a leading scientific institute specializing in applied research into intelligent data and knowledge analysis. 250 data scientists and IT experts support companies and organizations putting intelligent information management into practice. " .
 
@@ -2506,7 +2427,7 @@ sdapartner:FraunhoferIAIS a foaf:Organization, sdatech:academicPartner, sdatech:
                               sdaproject:FuhSen ;
                               foaf:mbox <mailto:info@iais.fraunhofer.de> ;
                               rdfs:label "Fraunhofer Institute for Intelligent Analysis nad Information Systems IAIS" ;
-                              foaf:phone <tel:+49-2241-143000> ;
+                              foaf:phone <Tel:+49-2241-143000> ;
                               schema:location <https://www.iais.fraunhofer.de/en/footer/contact.html> ;
                               dct:abstract "Fraunhofer IAIS is a leading scientific institute specializing in applied research into intelligent data and knowledge analysis. 250 data scientists and IT experts support companies and organizations putting intelligent information management into practice. " .
 
@@ -2515,7 +2436,7 @@ sdapartner:GET a foaf:Organization, sdatech:industryPartner, sdatech:Partner ;
                               foaf:currentProject <http://sda.tech/Project/BusinessIntelligence&AnalyticsApplication> ;
                               foaf:mbox <mailto:contact@getmap.gr> ;
                               rdfs:label "Geospital Enabling Technologies" ;
-                              foaf:phone <tel:+30-210-6664192> ;
+                              foaf:phone <Tel:+30-210-6664192> ;
                               schema:location <http://www.getmap.eu/en/contact/> ;
                               dct:abstract "GET is a high-tech SME, with solutions covering the entire lifecycle of geospatial data. " .
 
@@ -2536,7 +2457,7 @@ sdapartner:imec a foaf:Organization, sdatech:industryPartner, sdatech:Partner ; 
                               sdaproject:PRO-FLOW;
                               foaf:mbox <mailto:info@imec.be> ;
                               rdfs:label "Interuniversity MicroElectronics Center" ;
-                              foaf:phone <tel:+32-16-281211> ;
+                              foaf:phone <Tel:+32-16-281211> ;
                               foaf:depiction <https://www.imec-int.com/assets/img/imec-logo.svg> ;
                               schema:location <https://www.imec-int.com/en/connect-with-us> ;
                               dct:abstract "Imec is the world-leading R&D and innovation hub in nanoelectronics and digital technologies. " .
@@ -2551,7 +2472,7 @@ sdapartner:InfAI a foaf:Organization, sdatech:academicPartner, sdatech:Partner ;
                               foaf:depiction <https://infai.org/wp-content/uploads/2017/08/InfAI-Logo.png> ;
                               foaf:mbox <mailto:info@infai.org> ;
                               rdfs:label "Institute for Applied Computer Science" ;
-                              foaf:phone <tel:+49-341-2290370> ;
+                              foaf:phone <Tel:+49-341-2290370> ;
                               schema:location <https://infai.org/das-institut/kontakt/> ;
                               dct:abstract "The Institute for Applied Informatics (InfAI) e. V. is an institute founded in 2006 as a non-profit association, which pursues the promotion of science and research in the fields of computer science and business informatics." .
 
@@ -2559,7 +2480,7 @@ sdapartner:inmark a foaf:Organization, sdatech:industryPartner, sdatech:Partner 
                               foaf:homepage <http://www.grupoinmark.com/en/> ;
                               foaf:mbox <mailto:info@grupoinmark.com> ;
                               rdfs:label "Consulting services, information and business development" ;
-                              foaf:phone <tel:+34-91-4480203> ;
+                              foaf:phone <Tel:+34-91-4480203> ;
                               foaf:depiction <http://www.grupoinmark.com/en/wp-content/uploads/2017/04/inmark-logo40a-e1491308242105.png> ;
                               schema:location <http://www.grupoinmark.com/en/index.php/about-inmark/> ;
                               dct:abstract "INMARK is a business and marketing consulting company based in Madrid and operating throughout Europe and Latin America. INMARK has branches in 7 countries, totaling +200 qualified staff members. INMARK delivers fieldwork, analytic and strategic market research studies for leading financial banking institutions, governments, and ICT industry analysts, covering the different market segments." .
@@ -2579,14 +2500,14 @@ sdapartner:metaphacts a foaf:Organization, sdatech:industryPartner, sdatech:Part
                               foaf:mbox <mailto:info@metaphacts.com> ;
                               rdfs:label "Metaphacts Software Development" ;
                               foaf:depiction <http://www.metaphacts.com/images/logo_farbe.png> ;
-                              foaf:phone <tel:+49-6227-6989965> ;
+                              foaf:phone <Tel:+49-6227-6989965> ;
                               schema:location <http://www.metaphacts.com/> ;
                               dct:abstract "metaphacts is a Germany-based company offering products, solutions and services for describing, interchanging and querying graph data, as well as a user-oriented open platform for visualizing and interacting with knowledge graphs. " .
 
 sdapartner:UniversityOfAthens a foaf:Organization, sdatech:academicPartner, sdatech:Partner ;
                               foaf:homepage <http://en.uoa.gr/> ;
                               rdfs:label "National and Kapodistrian University of Athens" ;
-                              foaf:phone <tel:+30-210-7275064> ;
+                              foaf:phone <Tel:+30-210-7275064> ;
                               foaf:depiction <https://en.uoa.gr/fileadmin/user_upload/uoa_logo_eng.svg> ;
                               schema:location <http://en.uoa.gr/contact-and-maps.html> ;
                               dct:abstract "The National and Kapodistrian University of Athens is the largest state institution of higher learning in Greece, and among the largest universities in Europe. " .
@@ -2597,7 +2518,7 @@ sdapartner:NCSR a foaf:Organization, sdatech:academicPartner, sdatech:Partner ;
                               sdaproject:HOBBIT,
                               sdaproject:YDS;
                               rdfs:label "National VCentre for Scientific Research Demokritis - Institute of Informatics and Telecommunications" ;
-                              foaf:phone <tel:+30-210-6503153> ;
+                              foaf:phone <Tel:+30-210-6503153> ;
                               foaf:depiction <https://www.iit.demokritos.gr/resources/images/logo_iit_long.png> ;
                               schema:location <https://www.iit.demokritos.gr/contact> ;
                               dct:abstract "The Institute of Informatics and Telecommunications (IIT) focuses on research and development in the areas of Telecommunications, Networks, Web Technologies and Intelligent Systems. The main strategic objective of IIT is to excel in research and innovation required for the development of the knowledge society. " .
@@ -2609,7 +2530,7 @@ sdapartner:Ontos a foaf:Organization, sdatech:industryPartner, sdatech:Partner ;
                               sdaproject:GeoKnow ;
                               foaf:mbox <mailto:martin.voigt@ontos.com> ;
                               rdfs:label "Ontos GmbH" ;
-                              foaf:phone <tel:+49-341-2155910> ;
+                              foaf:phone <Tel:+49-341-2155910> ;
                               foaf:depiction: <http://ontos.com/wp-content/uploads/2016/02/Ontos_logo1_big.png> ;
                               schema:location <http://ontos.com/contact/> ;
                               dct:abstract "Ontos develops and sells software to manage the linked data life-cycle. The portfolio includes the Linked Data Suite, OntosMiner (NLP) and the OntoQUAD graph based store. " .
@@ -2620,7 +2541,7 @@ sdapartner:OpenPHACTS a foaf:Organization, sdatech:industryPartner, sdatech:Part
                               sdaproject:EU-ToxRisk ;
                               foaf:mbox <mailto:info@openphactsfoundation.org> ;
                               rdfs:label "The Open PHACTS Foundation" ;
-                              foaf:phone <tel:+44-1223-432344> ;
+                              foaf:phone <Tel:+44-1223-432344> ;
                               foaf:depiction <https://www.openphacts.org/2/images/OP_logo_300dpi.jpg> ;
                               schema:location <http://www.openphactsfoundation.org/contact/> ;
                               dct:abstract "Open PHACTS began as an Innovative Medicines Initiative (IMI) project to build a platform for researchers to access and query publicly-available pharmacological data. Together we have built the Open PHACTS Discovery Platform by bringing together vast amounts of linked data in a single integrated, open infrastructure. " .
@@ -2628,7 +2549,7 @@ sdapartner:OpenPHACTS a foaf:Organization, sdatech:industryPartner, sdatech:Part
 sdapartner:OpenLink a foaf:Organization, sdatech:industryPartner, sdatech:Partner ;
                               foaf:homepage <https://www.openlinksw.com/> ;
                               rdfs:label "Open Link Software - Making Technology Work for You" ;
-                              foaf:phone <tel:+44-20-86817701> ;
+                              foaf:phone <Tel:+44-20-86817701> ;
                               schema:location <https://www.openlinksw.com/contact/> ;
                               dct:abstract "OpenLink Software is an acclaimed technology innovator and leading vendor of industry standards compliant data access, integration, and management technology. " .
 
@@ -2646,7 +2567,7 @@ sdapartner:SemanticWebCompany a foaf:Organization, sdatech:industryPartner, sdat
                               sdaproject:ADEQUATe ;
                               foaf:mbox <mailto:office@semantic-web.com> ;
                               rdfs:label "Semantic Web Company - Linking Data to Knowledge" ;
-                              foaf:phone <tel:+43-1-4021235> ;
+                              foaf:phone <Tel:+43-1-4021235> ;
                               schema:location <https://semantic-web.com/contact/> ;
                               dct:abstract "Semantic Web Company (SWC) is a technology provider headquartered in Vienna (Austria). SWC supports organizations from all industrial sectors worldwide to improve their information management. Our core product has outstanding capabilities to extract meaning from big data by making use of linked data technologies. " .
 
@@ -2654,7 +2575,7 @@ sdapartner:TenForce a foaf:Organization, sdatech:industryPartner, sdatech:Partne
                               foaf:homepage <https://www.tenforce.com/> ;
                               foaf:mbox <mailto:info@tenforce.com> ;
                               rdfs:label "TenForce" ;
-                              foaf:phone <tel:+32-473-740942> ;
+                              foaf:phone <Tel:+32-473-740942> ;
                               schema:location <https://www.tenforce.com/contact/> ;
                               dct:abstract "TenForce is a Belgian Software Company known for its pragmatic solutions, built with innovative technology. Experts in Scrum from the early stages on A European thought-leader in Semantic Technology An international company – towards partners, employees & customers. " .
 
@@ -2662,7 +2583,7 @@ sdapartner:TomTom a foaf:Organization, sdatech:industryPartner, sdatech:Partner 
                               #foaf:homepage <https://www.tomtom.com/en_us/> ;
                               foaf:mbox <mailto:tomtom.pr@tomtom.com> ;
                               rdfs:label "TomTom Development Germany GmbH" ;
-                              foaf:phone <tel:+31-20-7575000> ;
+                              foaf:phone <Tel:+31-20-7575000> ;
                               foaf:depiction <https://webassets.tomtom.com/otf/images/media/E9AEF784-275F-4FA2-A17793784C546C84> ;
                               schema:location <https://mydrive.tomtom.com/en_gb/#mode=search+viewport=52.3773,4.90956,16,0,-0+search=%7B%22input%22:%22TomTom%20De%20Ruijterkade%22,%22coords%22:%5B52.3773,4.90956%5D%7D+ver=2> ;
                               dct:abstract "TomTom founded in 1991 is a world leader of products for in-car location and navigation products. " .
@@ -2674,7 +2595,7 @@ sdapartner:UniversityOfLeipzig a foaf:Organization, sdatech:academicPartner, sda
                               foaf:mbox <mailto:kommunikation@uni-leipzig.de> ;
                               rdfs:label "University of Leipzig" ;
                               foaf:depiction <https://upload.wikimedia.org/wikipedia/commons/4/4e/Universit%C3%A4t_Leipzig_logo.svg> ;
-                              foaf:phone <tel:+49-341-97108> ;
+                              foaf:phone <Tel:+49-341-97108> ;
                               schema:location <https://www.uni-leipzig.de/en/service/contacts.html> ;
                               dct:abstract "University of Leipzig is one of the oldest universities in Europe. It has a long tradition of globally oriented and culturally comparative historical research and third-level teaching. " .
 
@@ -2682,7 +2603,7 @@ sdapartner:UniversityOfSouthampton a foaf:Organization, sdatech:academicPartner,
                               foaf:homepage <https://www.southampton.ac.uk/> ;
                               foaf:mbox <mailto:international@southampton.ac.uk> ;
                               rdfs:label "University of Southampton" ;
-                              foaf:phone <tel:+44-23-80595000> ;
+                              foaf:phone <Tel:+44-23-80595000> ;
                               schema:location <https://www.southampton.ac.uk/contact.page> ;
                               dct:abstract "The University of Southampton is one of the most prestigious universities in the United Kingdom. It is ranked in the top ten of research led universities in the UK, and participates in a high number of collaborative research projects and related initiatives. " .
 
@@ -2690,7 +2611,7 @@ sdapartner:UniversityOfTrento a foaf:Organization, sdatech:academicPartner, sdat
                               foaf:homepage <http://www.unitn.it/en/> ;
                               foaf:mbox <mailto:ateneo@unitn.it> ;
                               rdfs:label "University Degli Studi di Trento" ;
-                              foaf:phone <tel:+39-0461-281111> ;
+                              foaf:phone <Tel:+39-0461-281111> ;
                               foaf:depiction <http://static-cdn.unitn.it/sites/www.unitn.it/themes/unitn_theme/images/logo_unitn_en.png> ;
                               schema:location <https://www.unitn.it/en/ateneo/933/contact-the-university-of-trento> ;
                               dct:abstract "Established in 1962, the University of Trento is nowadays recognized as a leading academic institution in Italy and Europe for its quality of research and international outreach, particularly in ICT, economics and sociology. " .
@@ -2700,7 +2621,7 @@ sdapartner:USU a foaf:Organization, sdatech:industryPartner, sdatech:Partner ;
                               foaf:currentProject sdaproject:Katana ;
                               foaf:mbox <mailto:t.gerick@usu.de> ;
                               rdfs:label "USU Software AG" ;
-                              foaf:phone <tel:+49-7141-4867440> ;
+                              foaf:phone <Tel:+49-7141-4867440> ;
                               foaf:depiction <https://cdn.usu.de/typo3conf/ext/imia_usu/Resources/Public/Images/logo-usu.svg> ;
                               schema:location <https://www.usu.de/en/usu-group/companies/usu-software-ag/> ;
                               dct:abstract "USU and its subsidiaries develop and sell complete software solutions for knowledge-based IT service management. " .
@@ -2709,7 +2630,7 @@ sdapartner:VUAmsterdam a foaf:Organization, sdatech:academicPartner, sdatech:Par
                               foaf:homepage <https://www.vu.nl/en/> ;
                               foaf:mbox <mailto:fh@dienst.vu.nl> ;
                               rdfs:label "Vrije Universiteit Amsterdam" ;
-                              foaf:phone <tel:+31-20-5985777> ;
+                              foaf:phone <Tel:+31-20-5985777> ;
                               foaf:depiction <https://www.vu.nl/en/Images/VUlogo_Wit_RGB_mettekst_tcm270-835563.svg> ;
                               schema:location <https://www.vu.nl/en/about-vu-amsterdam/contact-info-and-route/route-description/index.aspx> ;
                               dct:abstract "Ever since it was founded in 1880, VU Amsterdam has been known for its distinctive approach to knowledge. VU is an open organization, strongly linked to people and society. " .
@@ -2718,7 +2639,7 @@ sdapartner:WIGeoGIS a foaf:Organization, sdatech:industryPartner, sdatech:Partne
                               foaf:homepage <https://www.wigeogis.com/en/home> ;
                               foaf:mbox <mailto:muc@wigeogis.com> ;
                               rdfs:label "WIGeoGIS" ;
-                              foaf:phone <tel:+49-89-321998-0> ;
+                              foaf:phone <Tel:+49-89-321998-0> ;
                               foaf:depiction <https://www.wigeogis.com/homepage/hp16/img/logo.png> ;
                               schema:location <https://www.wigeogis.com/en/company> ;
                               dct:abstract "WIGeoGIS is among Europe’s leading companies in spatial business intelligence and geo marketing. " .
@@ -2727,7 +2648,7 @@ sdapartner:YellowMap a foaf:Organization, sdatech:industryPartner, sdatech:Partn
                               foaf:homepage <http://www.yellowmap.de/> ;
                               foaf:mbox <mailto:kontakt@yellowmap.de> ;
                               rdfs:label "YellowMap" ;
-                              foaf:phone <tel:+49-721-9638600> ;
+                              foaf:phone <Tel:+49-721-9638600> ;
                               schema:location <https://www.yellowmap.com/kontakt/> ;
                               foaf:depiction <http://www.yellowmap.de/Presentation/YellowMap/Layout/img/Logo_mit_Claim.png> ;
                               dct:abstract "Experienced specialist for card-based geographic information systems and everyday companion in the search for local information. " .
@@ -2925,16 +2846,6 @@ sdathesis:reflecting-on-the-user-experience-challenges-of-ceur-make-gui-and-harn
     sda:thesisLevel "MS,BS" ;
     dct:abstract """CEUR Make GUI is a graphical user interface supporting the workflow of publishing open access proceedings of scientific workshops via CEUR-WS.org, one of the largest open access repositories. For more details on the topic please go through the publications mentioned below. In this thesis we aim to work on producing a collaborative workspace for editing workshop proceedings and enhancing the user experience of the software. Based on the development of collaborative workspace we would also like to address the user experience and collaborative and cooperative workspace challenges through a structured protocol.Email:Muhammad.rohan.ali.asmat@iais.fraunhofer.de <a href="https://github.com/ceurws/ceur-make-ui">Current Repository</a> . <a href="http://eis-bonn.github.io/Theses/2016/Rohan_Asmat/thesis.pdf">Thesis</a> . <a href="http://sda.cs.uni-bonn.de/wp-content/uploads/2018/Publications/camera_ready_ceur.pdf">Publication</a> . <a href="https://github.com/ceurws/ceur-make-ui/projects/3">Task Board</a>""" .
 
-sdathesis:rdf-compression-techniques a dct:BibliographicResource, bibo:Thesis, sdatech:openThesis, sdatech:masterThesis ;
-    dct:title "RDF compression techniques" ;
-    dct:creator sdaperson:DamienGraux ;
-    foaf:maker sdaperson:DamienGraux ;
-    dct:issued "2017-06"^^xsd:gYearMonth ;
-    dct:language "en-US" ;
-    bibo:degree biboDegree:phd ;
-    sda:thesisLevel "MS" ;
-    dct:abstract """As a starting point, realizing a fresh state-of-the-art of compression techniques for RDF could be made. These techniques can mainly be divided into two families: the ones that compress as much as possible datasets in order to make transfers easier (see e.g. the study of Fernández et al.) and the ones which still allow data to be queried (see e.g. the HDT structure). Secondly, a reflexion on a new compression model may be thought about and then realized/implemented successfully -obviously, a already have some suggestion which could help the student 😉 like for instance try to compress the RDF graphs according to patterns which could be used in parallel of SPARQL query shapes.""" .
-
 sdathesis:provide-tools-for-latex-leveraging-semantic-web-standards a dct:BibliographicResource, bibo:Thesis, sdatech:openThesis, sdatech:masterThesis ;
     dct:title "Provide tools for LaTeX leveraging semantic web standards" ;
     dct:creator sdaperson:DamienGraux ;
@@ -2954,6 +2865,46 @@ sdathesis:rdf-2-resume a dct:BibliographicResource, bibo:Thesis, sdatech:openThe
     bibo:degree biboDegree:phd ;
     sda:thesisLevel "BS" ;
     dct:abstract """Basically, this subject would offer the student the possibility of entering in the SemanticWeb world while creating a fancy and useful tool. In a nutshell, RDF2Résumé would imply (1) to design a résumé ontology; (2) to be provide a simple tool (a simple piece of software such as a script) able to generate -let’s say- LaTeX code from an RDF file compliant with the aforementioned ontology; (3) in parallel to propose several final résumé templates; (4) and finally to realize a basic user-interface; (+) to give the possibility of automatically changing languages.""" .
+
+sdathesis:distributed-anomaly-detection-in-rdf a dct:BibliographicResource, bibo:Thesis, sdatech:openThesis, sdatech:masterThesis ;
+    dct:title "Distributed Anomaly Detection in RDF" ;
+    dct:creator sdaperson:HajiraJabeen ;
+    foaf:maker sdaperson:HajiraJabeen ;
+    dct:issued "2018-08"^^xsd:gYearMonth ;
+    dct:language "en-US" ;
+    bibo:degree biboDegree:phd ;
+    sda:thesisLevel "MS" ;
+    dct:abstract """Detecting anomalies in data is a vital task, with numerous high-impact applications in areas such as security, finance, health care, and law enforcement. While numerous  techniques  have  been  developed  in  past  years  for  spotting  outliers  and anomalies in unstructured collections of multi-dimensional points, with graph data becoming ubiquitous, techniques for structured graph data have been of focus recently. As objects in graphs have long-range correlations, a suite of novel technology has been developed for anomaly detection in graph data.""" .
+
+sdathesis:rdf-data-clustering a dct:BibliographicResource, bibo:Thesis, sdatech:openThesis, sdatech:masterThesis ;
+    dct:title "RDF Data Clustering" ;
+    dct:creator sdaperson:HajiraJabeen ;
+    foaf:maker sdaperson:HajiraJabeen ;
+    dct:issued "2018-09"^^xsd:gYearMonth ;
+    dct:language "en-US" ;
+    bibo:degree biboDegree:phd ;
+    sda:thesisLevel "MS" ;
+    dct:abstract """Clustering of heterogenous data contained in a Knowledgegraph""" .
+
+sdathesis:rdf-data-anonymization a dct:BibliographicResource, bibo:Thesis, sdatech:openThesis, sdatech:masterThesis ;
+    dct:title "RDF data anonymization" ;
+    dct:creator sdaperson:HajiraJabeen ;
+    foaf:maker sdaperson:HajiraJabeen ;
+    dct:issued "2018-09"^^xsd:gYearMonth ;
+    dct:language "en-US" ;
+    bibo:degree biboDegree:phd ;
+    sda:thesisLevel "MS" ;
+    dct:abstract """Anonymization of knowledge graphs data for security purposes""" .
+
+sdathesis:rdf-data-ruleminingrdf-data-anonymization a dct:BibliographicResource, bibo:Thesis, sdatech:openThesis, sdatech:masterThesis ;
+    dct:title "RDF data rulemining" ;
+    dct:creator sdaperson:HajiraJabeen ;
+    foaf:maker sdaperson:HajiraJabeen ;
+    dct:issued "2018-09"^^xsd:gYearMonth ;
+    dct:language "en-US" ;
+    bibo:degree biboDegree:phd ;
+    sda:thesisLevel "MS" ;
+    dct:abstract """Mining rules from RDF data for knowledge base completion""" .
 
 
 ########################onGoingThesis########################
@@ -2988,6 +2939,16 @@ sdathesis:recommendation-system-for-RDF-partitioners a dct:BibliographicResource
     bibo:degree biboDegree:phd ;
     sda:thesisLevel "MS,BS" ;
     dct:abstract """In order to store and query big RDF datasets efficiently in distributed environments, different partitioning techniques need to be implemented. Several techniques have been proposed for splitting Big RDF Data, ranging from vertical, hash, graph to semantic-based partitioners. However, the selection of the “best partitioner” depends highly on the structure of the dataset and the query efficiency and effectiveness are coupled to the query engine used. The goal of this thesis will be to develop a recommender system that will suggest the “best partitioner” based on the structure of the data and specific requirements.""" .
+
+sdathesis:rdf-compression-techniques a dct:BibliographicResource, bibo:Thesis, sdatech:ongoingThesis, sdatech:masterThesis ;
+    dct:title "RDF compression techniques" ;
+    dct:creator sdaperson:DamienGraux ;
+    foaf:maker sdaperson:DamienGraux ;
+    dct:issued "2017-06"^^xsd:gYearMonth ;
+    dct:language "en-US" ;
+    bibo:degree biboDegree:phd ;
+    sda:thesisLevel "MS" ;
+    dct:abstract """As a starting point, realizing a fresh state-of-the-art of compression techniques for RDF could be made. These techniques can mainly be divided into two families: the ones that compress as much as possible datasets in order to make transfers easier (see e.g. the study of Fernández et al.) and the ones which still allow data to be queried (see e.g. the HDT structure). Secondly, a reflexion on a new compression model may be thought about and then realized/implemented successfully -obviously, a already have some suggestion which could help the student 😉 like for instance try to compress the RDF graphs according to patterns which could be used in parallel of SPARQL query shapes.""" .
 
 ###############################################################
 
@@ -3073,6 +3034,7 @@ sdapublication:Publication5 a bibo:Article ;
                 foaf:Organization "FhG" ;
                 dc:author sdaperson:RajKapoor .
 
+
 ex:SemanticDataWebTechnologies a ex:course ;
                                rdfs:label "Semantic Data Web Technologies" ;
                                foaf:Person ex:OliverOctopus, ex:AlfredEel ;
@@ -3087,7 +3049,7 @@ ex:SemanticDataWebTechnologies a ex:course ;
 
 #########Summer Term############
 
-sdateaching:SMDSE18S a sdatech:Course ;
+sdateaching:SeminarModelDrivenSoftwareEngineeringSummer2018 a sdatech:Course ;
            rdfs:label "SMDSE" ;
            dct:title "Seminar Model-Driven Software Engineering" ;
            foaf:homepage <> ;
@@ -3101,7 +3063,7 @@ sdateaching:SMDSE18S a sdatech:Course ;
            sda:year 2018 ;
            sda:id "MA-INF 3218" .
 
-sdateaching:SPA18S a sdatech:Course ;
+sdateaching:SeminarPredictiveAnalyticsSummer2018 a sdatech:Course ;
            rdfs:label "PA" ;
            dct:title "Seminar Predictive Analytics" ;
            foaf:homepage <https://basis.uni-bonn.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=141397&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung> ;
@@ -3115,7 +3077,7 @@ sdateaching:SPA18S a sdatech:Course ;
            sda:year 2018 ;
            sda:id "MA-INF 3238" .
 
-sdateaching:SNLP18S a sdatech:Course ;
+sdateaching:SeminarNaturalLanguageProcessingSummer2018 a sdatech:Course ;
            rdfs:label "SNLP" ;
            dct:title "Seminar Natural Language Processing" ;
            foaf:homepage <> ;
@@ -3129,7 +3091,7 @@ sdateaching:SNLP18S a sdatech:Course ;
            sda:year 2018 ;
            sda:id "MA-INF 4221" .
 
-sdateaching:LNLP18S a sdatech:Course ;
+sdateaching:LabNaturalLanguageProcessingSummer2018 a sdatech:Course ;
            rdfs:label "SNLP" ;
            dct:title "Lab Natural Language Processing" ;
            foaf:homepage <https://smartdataanalytics.github.io/MA-INF-4222-NLP-Lab/> ;
@@ -3143,7 +3105,7 @@ sdateaching:LNLP18S a sdatech:Course ;
            sda:year 2018 ;
            sda:id "MA-INF 4222" .
 
-sdateaching:LDBDA18S a sdatech:Course ;
+sdateaching:LabDistributedBigDataAnalyticsSummer2018 a sdatech:Course ;
            rdfs:label "LDBDA" ;
            dct:title "Lab Distributed Big Data Analytics" ;
            foaf:homepage <http://sda.cs.uni-bonn.de/teaching/dbda/> ;
@@ -3157,7 +3119,7 @@ sdateaching:LDBDA18S a sdatech:Course ;
            sda:year 2018 ;
            sda:id "MA-INF 4223" .
 
-sdateaching:LSDWT18S a sdatech:Course ;
+sdateaching:LabSemanticDataWebTechnologiesSummer2018 a sdatech:Course ;
            rdfs:label "LSDWT" ;
            dct:title "Lab Semantic Data Web Technologies" ;
            foaf:homepage <https://basis.uni-bonn.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=142088&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung> ;
@@ -3171,7 +3133,7 @@ sdateaching:LSDWT18S a sdatech:Course ;
            sda:year 2018 ;
            sda:id "MA-INF 4314" .
 
-sdateaching:MSSDA18S a sdatech:Course ;
+sdateaching:MasterSeminarSmartDataAnalyticsSummer2018 a sdatech:Course ;
            rdfs:label "MSSDA" ;
            dct:title "Master Seminar Smart Data Analytics" ;
            foaf:homepage <https://basis.uni-bonn.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=142311&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung> ;
@@ -3185,7 +3147,7 @@ sdateaching:MSSDA18S a sdatech:Course ;
            sda:year 2018 ;
            sda:id "MA-INF 0402" .
 
-sdateaching:MSSE18S a sdatech:Course ;
+sdateaching:MasterSeminarSoftwareEngineeringSummer2018 a sdatech:Course ;
            rdfs:label "MSSE" ;
            dct:title "Master Seminar Software Engineering" ;
            foaf:homepage <https://basis.uni-bonn.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=142310&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung> ;
@@ -3199,7 +3161,7 @@ sdateaching:MSSE18S a sdatech:Course ;
            sda:year 2018 ;
            sda:id "MA-INF 0402" .
 
-sdateaching:BSBSWT18S a sdatech:Course ;
+sdateaching:BegleitseminarBachelorarbeitSoftwaretechnologieSummer2018 a sdatech:Course ;
            rdfs:label "BSBSWT" ;
            dct:title "Begleitseminar Bachelorarbeit Softwaretechnologie" ;
            foaf:homepage <https://basis.uni-bonn.de/qisserver/rds?state=verpublish&status=init&vmfile=no&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung&veranstaltung.veranstid=142291> ;
@@ -3216,7 +3178,9 @@ sdateaching:BSBSWT18S a sdatech:Course ;
 
 ########Winter Term##############
 
-sdateaching:LMDSE17W a sdatech:Course ;
+###WS 2017/18###
+
+sdateaching:LabModelDrivenSoftwareEngineeringWinter2017 a sdatech:Course ;
            rdfs:label "LMDSE" ;
            dct:title "Lab Model-Driven Software Engineering" ;
            foaf:homepage <https://sewiki.iai.uni-bonn.de/teaching/labs/mdse/2017/start> ;
@@ -3230,7 +3194,7 @@ sdateaching:LMDSE17W a sdatech:Course ;
            sda:year 2017 ;
            sda:id "MA-INF 3219" .
 
-sdateaching:SVTCS17W a sdatech:Course ;
+sdateaching:SeminarVerificationAndTestingOfComplexSystemsWinter2017 a sdatech:Course ;
            rdfs:label "SVTCS" ;
            dct:title "Seminar Verification and Testing of Complex Systems" ;
            foaf:homepage <https://sewiki.iai.uni-bonn.de/teaching/seminars/vtcs/2017/start> ;
@@ -3244,7 +3208,7 @@ sdateaching:SVTCS17W a sdatech:Course ;
            sda:year 2017 ;
            sda:id "MA-INF 3318" .
 
-sdateaching:SNLP17W a sdatech:Course ;
+sdateaching:SeminarNaturalLanguageProcessingWinter2017 a sdatech:Course ;
            rdfs:label "SNLP" ;
            dct:title "Seminar Natural Language Processing" ;
            foaf:homepage <https://basis.uni-bonn.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=141397&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung> ;
@@ -3258,7 +3222,7 @@ sdateaching:SNLP17W a sdatech:Course ;
            sda:year 2017 ;
            sda:id "MA-INF 4221" .
 
-sdateaching:LNLP17W a sdatech:Course ;
+sdateaching:LabNaturalLanguageProcessingWinter2017 a sdatech:Course ;
            rdfs:label "LNLP" ;
            dct:title "Lab Natural Language Processing" ;
            foaf:homepage <https://basis.uni-bonn.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=141397&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung> ;
@@ -3272,7 +3236,7 @@ sdateaching:LNLP17W a sdatech:Course ;
            sda:year 2017 ;
            sda:id "MA-INF 4222" .
 
-sdateaching:LDBDA17W a sdatech:Course ;
+sdateaching:LabDistributedBigDataAnalytics_Winter2017 a sdatech:Course ;
            rdfs:label "LDBDA" ;
            dct:title "Lab Distributed Big Data Analytics" ;
            foaf:homepage <http://sda.cs.uni-bonn.de/teaching/dbda/> ;
@@ -3286,7 +3250,7 @@ sdateaching:LDBDA17W a sdatech:Course ;
            sda:year 2017 ;
            sda:id "MA-INF 4223" .
 
-sdateaching:LESDWT17W a sdatech:Course ;
+sdateaching:LectureSemanticDataWebTechnologiesWinter2017 a sdatech:Course ;
            rdfs:label "LESDWT" ;
            dct:title "Lecture Semantic Data Web Technologies" ;
            foaf:homepage <https://basis.uni-bonn.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=134907&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung> ;
@@ -3300,21 +3264,7 @@ sdateaching:LESDWT17W a sdatech:Course ;
            sda:year 2017 ;
            sda:id "MA-INF 4312" .
 
-sdateaching:ESDWT17W a sdatech:Course ;
-           rdfs:label "ESDWT" ;
-           dct:title "Exercises Semantic Data Web Technologies" ;
-           foaf:homepage <https://basis.uni-bonn.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=134908&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung> ;
-           ex:description "" ;
-           dct:language "en-US" ;
-           dct:educationLevel "" ;
-           pf:endDate "2019-02-28"^^xsd:date ;
-           pf:startDate "2016-03-01"^^xsd:date ;
-           sda:maintainer sdaperson:ChristophLange, sdaperson:JensLehmann ;
-           sda:semester "Winter" ;
-           sda:year 2017 ;
-           sda:id "MA-INF 4312" .
-
-sdateaching:SSDWT17W a sdatech:Course ;
+sdateaching:SeminarSemanticDataWebTechnologiesWinter2017 a sdatech:Course ;
            rdfs:label "SSDWT" ;
            dct:title "Seminar Semantic Data Web Technologies" ;
            foaf:homepage <https://basis.uni-bonn.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=135455&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung> ;
@@ -3328,7 +3278,7 @@ sdateaching:SSDWT17W a sdatech:Course ;
            sda:year 2017 ;
            sda:id "MA-INF 4313" .
 
-sdateaching:LEKGA17W a sdatech:Course ;
+sdateaching:LectureKnowledgeGraphAnalysisWinter2017 a sdatech:Course ;
            rdfs:label "LEKGA" ;
            dct:title "Lecture Knowledge Graph Analysis" ;
            foaf:homepage <https://sewiki.iai.uni-bonn.de/teaching/lectures/kga/2017/start> ;
@@ -3342,21 +3292,7 @@ sdateaching:LEKGA17W a sdatech:Course ;
            sda:year 2017 ;
            sda:id "MA-INF 4316" .
 
-sdateaching:EKGA17W a sdatech:Course ;
-           rdfs:label "EKGA" ;
-           dct:title "Exercises Knowledge Graph Analysis" ;
-           foaf:homepage <https://sewiki.iai.uni-bonn.de/teaching/lectures/kga/2017/start> ;
-           ex:description "" ;
-           dct:language "en-US" ;
-           dct:educationLevel "" ;
-           pf:endDate "2019-02-28"^^xsd:date ;
-           pf:startDate "2016-03-01"^^xsd:date ;
-           sda:maintainer sdaperson:AsjaFischer, sdaperson:JensLehmann ;
-           sda:semester "Winter" ;
-           sda:year 2017 ;
-           sda:id "MA-INF 4316" .
-
-sdateaching:SKGA17W a sdatech:Course ;
+sdateaching:SeminarKnowledgeGraphAnalysisWinter2017 a sdatech:Course ;
            rdfs:label "SKGA" ;
            dct:title "Seminar Knowledge Graph Analysis" ;
            foaf:homepage <https://basis.uni-bonn.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=135431&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung> ;
@@ -3374,10 +3310,10 @@ sdateaching:SKGA17W a sdatech:Course ;
 ###################Jobs###################
 ##########################################
 
-sdajob:AkademischerRatAustralianEnvironment a sdatech:Job ;
+sdajob:AkademischerRat a sdatech:Job ;
            rdfs:label "AkademischerRat" ;
-           dct:title "Akademischer Rat in Australian Environment Research" ;
-           ex:description "undefined" ; 
+           dct:title "Akademischer Rat / Akademische Rätin" ;
+           ex:description "undefined" ;
            sda:requirements "undefined" ;
            sda:experience "undefined" ;
            sda:expected "undefined" ;
@@ -3385,10 +3321,10 @@ sdajob:AkademischerRatAustralianEnvironment a sdatech:Job ;
            sda:apply "undefined" ;
            foaf:mbox <undefined> .
 
-sdajob:PhdAustralianEnvironment a sdatech:Job ;
+sdajob:PhDStudent a sdatech:Job ;
            rdfs:label "Phd" ;
-           dct:title "Phd in Australian Environment Research" ;
-           ex:description "undefined" ; 
+           dct:title "Research Associate / PhD Student Positions" ;
+           ex:description "undefined" ;
            sda:requirements "undefined" ;
            sda:experience "undefined" ;
            sda:expected "undefined" ;
@@ -3396,10 +3332,10 @@ sdajob:PhdAustralianEnvironment a sdatech:Job ;
            sda:apply "undefined" ;
            foaf:mbox <undefined> .
 
-sdajob:SeniorResearcherAustralianEnvironment a sdatech:Job ;
+sdajob:SeniorResearcher a sdatech:Job ;
            rdfs:label "SeniorResearcher" ;
-           dct:title "Senior Researcher in Australian Environment Research" ;
-           ex:description "undefined" ; 
+           dct:title "Postdoctoral / Senior Researcher Positions" ;
+           ex:description "undefined" ;
            sda:requirements "undefined" ;
            sda:experience "undefined" ;
            sda:expected "undefined" ;
@@ -3407,10 +3343,10 @@ sdajob:SeniorResearcherAustralianEnvironment a sdatech:Job ;
            sda:apply "undefined" ;
            foaf:mbox <undefined> .
 
-sdajob:StudentAssistantAustralianEnvironment a sdatech:Job ;
+sdajob:StudentAssistant a sdatech:Job ;
            rdfs:label "StudentAssistant" ;
-           dct:title "Student Assistant in Australian Environment Research" ;
-           ex:description "undefined" ; 
+           dct:title "Student Assistants" ;
+           ex:description "undefined" ;
            sda:requirements "undefined" ;
            sda:experience "undefined" ;
            sda:expected "undefined" ;
@@ -3428,7 +3364,7 @@ sdatech:jobs a foaf:Document ;
 sdatech:akademischeJob a foaf:Document ;
        rdfs:label "AkademischerRat" ;
        dct:title "Akademische/r Rat/Rätin" ;
-       ex:description "We are looking for a senior researcher (Akademischer Rat on payment scale 100% A13 [1], comparable to Assistant Professor) for 3 years with possible extensions." ; 
+       ex:description "We are looking for a senior researcher (Akademischer Rat on payment scale 100% A13 [1], comparable to Assistant Professor) for 3 years with possible extensions." ;
        sda:requirements "A completed PhD and Master degree in a relevant field (Computer Science or related) | Proficiency in spoken and written English" ;
        sda:experience "Machine Learning, Deep Learning, Data Mining, Statistics, Mathematics, Big Data | Semantic Technologies and Linked Data, Knowledge Representation, Theoretical Computer Science | Geospatial data modeling and analysis | Natural language processing, in particular Question Answering" ;
        sda:expected "An outstanding track record in publishing at top level conferences and journals | Experience in acquiring and running research and industry projects | Responsibility for courses at the Computer Science Institute for 3 hours per week (4 SWS) | Co-supervision of PhD, Master- and Bachelor thesis | Experience in software development and project management | Interest in transferring research results into practice" ;
@@ -3441,7 +3377,7 @@ sdatech:akademischeJob a foaf:Document ;
 sdatech:postdocjob a foaf:Document ;
        rdfs:label "SeniorResearcher" ;
        dct:title "Postdoctoral/Senior Researcher" ;
-       ex:description "We are looking for a Postdoctoral Researchers (German - Wissenschaftliche(r) Mitarbeiter(in)) at the Computer Science Institute at the University of Bonn." ; 
+       ex:description "We are looking for a Postdoctoral Researchers (German - Wissenschaftliche(r) Mitarbeiter(in)) at the Computer Science Institute at the University of Bonn." ;
        sda:requirements "A completed PhD and Master degree in a relevant field (Computer Science or related) | Proficiency in spoken and written English" ;
        sda:experience "Machine Learning, Deep Learning, Data Mining, Statistics, Mathematics, Big Data | Semantic Technologies and Linked Data, Knowledge Representation, Theoretical Computer Science | Geospatial data modeling and analysis | Natural language processing, in particular Question Answering" ;
        sda:expected "Keen interest in top level conference and journal publications | Co-supervision of PhD, Master- and Bachelor thesis | Interest in acquiring and running research and industry projects | Experience in software development and project management | Interest in transferring research results into practice and commercializing them" ;
@@ -3454,7 +3390,7 @@ sdatech:postdocjob a foaf:Document ;
 sdatech:researchAssociateandPhd a foaf:Document ;
        rdfs:label "Phd" ;
        dct:title "Research Associate/PhD Student" ;
-       ex:description "We are looking for a Research Associate (Wissenschaftliche(r) Mitarbeiter(in)) at the Computer Science Institute at the University of Bonn." ; 
+       ex:description "We are looking for a Research Associate (Wissenschaftliche(r) Mitarbeiter(in)) at the Computer Science Institute at the University of Bonn." ;
        sda:requirements "A Master degree in a relevant field (Computer Science or related) | Proficiency in spoken and written English" ;
        sda:experience "Machine Learning, Deep Learning, Data Mining, Statistics, Mathematics, Big Data | Semantic Technologies and Linked Data, Knowledge Representation, Theoretical Computer Science | Geospatial data modeling and analysis | Natural language processing, in particular Question Answering" ;
        sda:expected "Keen interest in top level conference and journal publications | Co-supervision of PhD, Master- and Bachelor thesis | Experience in software development and project management | Interest in transferring research results into practice and commercializing them" ;
@@ -3462,12 +3398,12 @@ sdatech:researchAssociateandPhd a foaf:Document ;
        sda:apply "To apply, please send a mail to SDA Applications including a CV, a master certificate, a motivation letter including a short overview of previous research activities, two letters of recommendation and a writing sample (e.g. prior publication or master thesis excerpt). Applications are possible until all positions have been filled. Please do not send mails larger than 10MB." ;
        foaf:mbox <SDA-applications@lists.iai.uni-bonn.de> ;
        sda:duration "3 years, starting on 01.01.1970, extension possible" ;
-       sda:payment "100% A13[1]" .        
+       sda:payment "100% A13[1]" .
 
 sdatech:studentassistants a foaf:Document ;
        rdfs:label "StudentAssistant" ;
        dct:title "Student Assistant" ;
-       ex:description "We are looking for student assistants at the Computer Science Institute at the University of Bonn" ; 
+       ex:description "We are looking for student assistants at the Computer Science Institute at the University of Bonn" ;
        sda:requirements "Proficiency in spoken and written English" ;
        sda:experience "Machine Learning, Deep Learning, Data Mining, Statistics, Mathematics, Big Data | Semantic Technologies and Linked Data, Knowledge Representation, Theoretical Computer Science | Geospatial data modeling and analysis | Natural language processing, in particular Question Answering" ;
        sda:expected "none" ;
@@ -3475,9 +3411,9 @@ sdatech:studentassistants a foaf:Document ;
        sda:apply "To apply, please send a mail to SDA Applications including a CV, a master certificate, a motivation letter including a short overview of previous research activities, two letters of recommendation and a writing sample (e.g. prior publication or master thesis excerpt). Applications are possible until all positions have been filled. Please do not send mails larger than 10MB." ;
        foaf:mbox <SDA-applications@lists.iai.uni-bonn.de> ;
        sda:duration "3 years, starting on 01.01.1970, extension possible" ;
-       sda:payment "100% A13[1]" .   
+       sda:payment "100% A13[1]" .
 
-sdatech:jobEnvoirnment a foaf:Document ;
+sdatech:jobEnvironment a foaf:Document ;
        rdfs:label "Job Envoirnment" .
 
 sdatech:faqjob a foaf:Document ;
@@ -3491,6 +3427,82 @@ sdatech:blog a foaf:Document ;
 
 sdatech:partners a foaf:Document ;
             rdfs:label "Partners" .
+
+##########################################
+###################Rooms##################
+##########################################
+
+sda:Room22 a sda:Room ;
+           schema:location <http://sda.tech/Address/SDA> ;
+           ex:name "Room 1.022" .
+
+sda:Roomc1 a sda:Room ;
+           schema:location <http://sda.tech/Address/IAIS> ;
+           ex:name "Room C1-227" .
+
+sda:Roomp631 a sda:Room ;
+           schema:location <http://sda.tech/Address/InfAI> ;
+           ex:name "Room P631" .
+
+sda:Room66 a sda:Room ;
+            schema:location <http://sda.tech/Address/SDA> ;
+            ex:name "Room 1.066" .
+
+sda:Room65 a sda:Room ;
+            schema:location <http://sda.tech/Address/SDA> ;
+            ex:name "Room 1.065" .
+
+sda:Room51 a sda:Room ;
+            schema:location <http://sda.tech/Address/SDA> ;
+            ex:name "Room 1.051" .
+
+sda:Room38 a sda:Room ;
+           schema:location <http://sda.tech/Address/SDA> ;
+           ex:name "Room 1.038" .
+
+sda:Room52 a sda:Room ;
+           schema:location <http://sda.tech/Address/SDA> ;
+           ex:name "Room 1.052" .
+
+sda:Room55 a sda:Room ;
+           schema:location <http://sda.tech/Address/SDA> ;
+           ex:name "Room 1.055" .
+
+sda:Room64 a sda:Room ;
+           schema:location <http://sda.tech/Address/SDA> ;
+           ex:name "Room 1.064" .
+
+sda:Room68 a sda:Room ;
+           schema:location <http://sda.tech/Address/SDA> ;
+           ex:name "Room 1.068" .
+
+sda:Room126 a sda:Room ;
+            schema:location <http://sda.tech/Address/SDA> ;
+            ex:name "Room 1.126" .
+
+sda:RoomA108 a sda:Room ;
+             schema:location <http://sda.tech/Address/IAIS> ;
+             ex:name "Room A-108" .
+
+sda:RoomB3236 a sda:Room ;
+             schema:location <http://sda.tech/Address/IAIS> ;
+             ex:name "Room B3-236" .
+
+sda:RoomC326 a sda:Room ;
+              schema:location <http://sda.tech/Address/IAIS> ;
+              ex:name "Room C-326" .
+
+sda:RoomB3226 a sda:Room ;
+              schema:location <http://sda.tech/Address/IAIS> ;
+              ex:name "Room B3-226" .
+
+sda:RoomB3206 a sda:Room ;
+              schema:location <http://sda.tech/Address/IAIS> ;
+              ex:name "Room B3-206" .
+
+sda:Roomp905 a sda:Room ;
+             schema:location <http://sda.tech/Address/InfAI> ;
+             ex:name "Room P905" .
 
 ##########################Person Documents######################################
 sdatech:people a foaf:Document ;
@@ -3764,12 +3776,12 @@ sdatech:Job a owl:Class ;
                     sysont:creationLabel "Job" ;
                     dct:issued "2008-05-14" .
 
+sda:Room a owl:Class ;
+                    rdfs:label "Room" .
+
 ###############################################
 ####################SDA Data Properties########
 ###############################################
-
-sda:room a owl:DatatypeProperty ;
-          rdfs:label "room" .
 
 sda:linkedin a owl:DatatypeProperty ;
           rdfs:label "Linkedin" .
@@ -3803,12 +3815,27 @@ sda:thesisLevel a owl:DatatypeProperty;
 <http://sda.tech/Address/SDA> a schema:PostalAddress ;
                                 rdfs:label "Smart Data Analytics, Endenicher Allee 19a, 53115 Bonn" ;
                                 schema:addressCountry "Germany" ;
-                                dcat:keyword "SDA" ;
-                                swpo:hasLeader sdaperson:JensLehmann;
                                 schema:addressLocality "Bonn" ;
                                 schema:postalCode "53117" ;
                                 schema:streetAddress "Endenicher Allee 19a" ;
+                                schema:institute "Smart Data Analytics, University of Bonn" ;
                                 sysont:range "19a" ;
                                 geo:lat "50.7519185"^^xsd:float ;
                                 geo:long "7.0943671"^^xsd:float ;
                                 geo:geometry "POINT(7.0943671 50.7519185)" .
+
+<http://sda.tech/Address/InfAI> a schema:PostalAddress ;
+                                  rdfs:label "Leipzig University, Goerdelerring 9, 04109 Leipzig" ;
+                                  schema:addressCountry "Germany" ;
+                                  schema:addressLocality "Leipzig" ;
+                                  schema:postalCode "04109" ;
+                                  schema:streetAddress "Goerdelerring 9" ;
+                                  schema:institute "Institute for Applied Informatics, University of Leipzig" .
+
+<http://sda.tech/Address/IAIS> a schema:PostalAddress ;
+                                 rdfs:label "Fraunhofer IAIS, Schloss Birlinghoven, 53757 Sankt Augustin, Germany" ;
+                                 schema:addressCountry "Germany" ;
+                                 schema:addressLocality "Sankt Augustin" ;
+                                 schema:postalCode "53757" ;
+                                 schema:streetAddress "Schloss Birlinghoven" ;
+                                 schema:institute "Fraunhofer IAIS" .
