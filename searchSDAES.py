@@ -12,6 +12,7 @@ sys.setdefaultencoding('utf8')
 
 # using directly the endpoint to query
 sparql = SPARQLWrapper("http://localhost:3030/kommunikationsroboter/sparql")
+es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
 
 indexName = "kommunikationsroboter"
 docTypeName = "robot"
@@ -43,8 +44,9 @@ def roomnumber (uri):
                 json_results=  json.dumps(results,separators=(',',':'),sort_keys=True) #results to json
                 print json_results
 
-es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
 userSearch = raw_input("What is the room of ")
+
+
 result = es.search(index=indexName, body={
   'query': {
     'match': {
