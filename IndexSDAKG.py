@@ -52,15 +52,16 @@ query = """
     PREFIX dct:   <http://purl.org/dc/terms/>
     PREFIX dcat: <http://www.w3.org/ns/dcat#>
 
-    SELECT DISTINCT ?uri ?label 
-    WHERE { 
-      {?uri foaf:name ?label}
-      UNION
-      {?uri rdfs:label ?label}
-      UNION
-      {?uri dct:label ?label}
-      UNION
-      {?uri dcat:keyword ?label}
+    SELECT DISTINCT ?uri ?label {
+        GRAPH ?g { 
+          {?uri foaf:name ?label}
+          UNION
+          {?uri rdfs:label ?label}
+          UNION
+          {?uri dct:label ?label}
+          UNION
+          {?uri dcat:keyword ?label}
+        }
     }
 """ 
 sparql.setQuery(query)

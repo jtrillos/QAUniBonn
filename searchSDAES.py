@@ -17,29 +17,31 @@ indexName = "kommunikationsroboter"
 docTypeName = "robot"
 
 def roomnumber (uri):
-	query ="""
-		PREFIX sda: <http://beta.sda.tech/schema/>
-		PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+        query ="""
+                PREFIX sda: <http://beta.sda.tech/schema/>
+                PREFIX ex: <http://example.org/>
+                PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
-		SELECT ?x
-		WHERE {
+                SELECT ?x {
+                GRAPH ?g {
 
-			<%s>  a foaf:Person;
-			sda:room ?x.
-		  
-		}
-	"""% uri["hits"]["hits"][0]["_source"]["uri"]
+                        <%s>  a foaf:Person; ex:address ?room. 
+                        ?room ex:name ?x.
+                  
+                
+                }}
+        """% uri["hits"]["hits"][0]["_source"]["uri"]
 
-	sparql.setQuery(query)
-	sparql.setReturnFormat(JSON)
-	results = sparql.query().convert()
-	if not results["results"]["bindings"]:
-	    print ("No results found")
-	    sys.exit(1)
-	else:
-		print "The room is " + results["results"]["bindings"][0]["x"]["value"]
-		json_results=  json.dumps(results,separators=(',',':'),sort_keys=True) #results to json
-		print json_results
+        sparql.setQuery(query)
+        sparql.setReturnFormat(JSON)
+        results = sparql.query().convert()
+        if not results["results"]["bindings"]:
+            print ("No results found")
+            sys.exit(1)
+        else:
+                print "The room is " + results["results"]["bindings"][0]["x"]["value"]
+                json_results=  json.dumps(results,separators=(',',':'),sort_keys=True) #results to json
+                print json_results
 
 es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
 userSearch = raw_input("What is the room of ")
