@@ -16,7 +16,7 @@
 	- The server starts at `http://localhost:3030/`
 - Create a virtual environment for Python 2.7 ```$ virtualenv pythenv --python=python2  ```
 	- Run the virtual environment ```$ source pythenv/bin/activate```
-	- Install the dependencies ```$ pip install elasticsearch SPARQLWrapper simplejson gensim pandas flask```
+	- Install the dependencies ```$ pip install elasticsearch SPARQLWrapper simplejson gensim pandas flask nltk```
 - Run ```$ python IndexSDAKG.py ``` to import all the entities and labels of the KG to ElasticSearch (This is needed only when the KG is being updated or it is the first time).
 - Run ```$ python searchSDAES.py ``` to search and get a response 
 - Download [wiki-en.bin fasttext](https://s3-us-west-1.amazonaws.com/fasttext-vectors/wiki.en.zip)
@@ -50,3 +50,18 @@ $ docker pull docker.elastic.co/elasticsearch/elasticsearch:6.3.2
 ```sh
 $ docker run -d  --name elasticsearch -e transport.host=0.0.0.0 -e cluster.name=elasticsearch -e http.host=0.0.0.0 -e xpack.security.enabled=false -it docker.elastic.co/elasticsearch/elasticsearch:6.3.2
 ```
+
+If server does not connect with the container of ElasticSearch
+```sh
+$ docker run -d --name qaunibonn_elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.3.2
+```
+
+If there is not data of nltk uncomment the lines 8 - 11 in nerQuestion.py
+
+To run the server
+```sh
+$ python app.py
+```
+
+Example request API:
+curl -i -H "Content-Type: application/json" -X POST -d '{"question":"Where is SDA?"}' http://localhost:8000/getquestion
