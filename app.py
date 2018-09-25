@@ -1,5 +1,7 @@
 from flask import Flask,request,jsonify
-
+from exceptions import OSError,  ValueError, TypeError
+from gensim import corpora
+from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 from gensim.models import FastText
 import bz2, os, re
@@ -23,70 +25,144 @@ indexName = "kommunikationsroboter"
 docTypeName = "robot"
 ############################
 
-# Given a query question and an URI
-def exampleQueryFuseki (question, uri):
-    query ="""
-            prefix dbo: <http://dbpedia.org/ontology/>
-            prefix schema: <http://schema.org/>
-            SELECT ?x {
-              GRAPH ?g {<%s> dbo:location ?loc.
-                                ?loc schema:streetAddress ?address; 
-                                 schema:postalCode ?postal; 
-                                 schema:addressLocality ?city.
-                BIND(concat(STR(?address), " ", STR(?postal), " ", STR(?city)) as ?x)
-              }
-            }
-    """% uri
+def get_word_embedding(word):
+  return model[word]
 
+def getQuestionVector(question):
+  words=question.split()
+  #print words
+  numberWords=len(words)
+  questionVector=np.zeros(300)
+  for word in words:
+    wordVector=get_word_embedding(word)
+    questionVector=np.add(questionVector,wordVector)
+  questionVector=np.divide(questionVector,numberWords)
+  return questionVector
+
+# Find the cosine similarity comparing templates.json with question
+def ranking(question):
+  with open('data/templates.json', 'r') as templates_json:
+    try:
+      templatesDict = json.load(templates_json)
+      templateVectorMatrix = np.array([])
+      n=0
+      for template in templatesDict :
+        n=n+1
+        vector = np.array(template['vec_representation'])
+        if templateVectorMatrix.size > 0:
+          if templateVectorMatrix.size==1:
+            templateVectorMatrix = np.stack((templateVectorMatrix,vector))
+          else:
+            templateVectorMatrix = np.vstack((templateVectorMatrix,vector))
+        else:
+          templateVectorMatrix = np.hstack((templateVectorMatrix,vector))
+
+      sims=cosine_similarity(getQuestionVector(question).reshape(1,-1),templateVectorMatrix)
+      sims_index = np.argsort(sims)[0][::-1][:n]
+
+      for i in range(n):
+        templatesDict[i]['ranking'] = sims[0][i]
+
+      #print("sims_index computed")
+      #print(str(sims_index))
+
+      return json.dumps(templatesDict)
+    except ValueError:
+      print("error")
+      return {'err' : 'No templates found'}
+
+# Given a query question, uri and a jsonTemplate returns the answer
+def queryFuseki (question, uri, jsonTemplate):
+  flag = False
+  for item in json.loads(jsonTemplate):
+    sparqlQuery = item['sparql_query'] % uri
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     results = sparql.query().convert()
     # print results
-    if not results["results"]["bindings"]:
-        json_results = {
-          'question': question,
-          'response': 'No results found'
-        }
-        # resutl in json
-        return json.dumps(json_results)
-        #sys.exit(1)
-    else:
-        # print "The address is " + results["results"]["bindings"][0]["x"]["value"]
-        json_results = {
-          'question': question,
-          'response': results["results"]["bindings"][0]["x"]["value"]
-        }
-        # resutl in json
-        return json.dumps(json_results)
-
-
-
+    if results["results"]["bindings"]:
+      json_results = {
+        'question': question,
+        'response': results["results"]["bindings"][0]["x"]["value"]
+      }
+      flag = True
+      break
+  
+  if flag:
+    # resutl in json
+    return json.dumps(json_results)
+  else:
+    json_results = {
+      'question': question,
+      'response': "No results found"
+    }
+    return json.dumps(json_results)
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return "this is a dummy fasttext server"
+  return "this is a dummy fasttext server"
+ 
+# Create the templates.json 
+@app.route('/add-template', methods=['POST'])
+def addtemplate():
+  question = request.json['question']
+  sparl_query= request.json['sparql']
+  vec = getQuestionVector(question).tolist()
 
-@app.route('/getquestion', methods=['POST'])
+  with open('data/templates.json','r') as templates_json:
+    try:
+      templatesDict = json.load(templates_json)
+    except ValueError:
+      print("no json could be read")
+      templatesDict=[]
+
+  ranking = -1;
+
+  for template in templatesDict:
+    print(type(template))
+    try:
+      ranking = template['ranking'] if(template['ranking'] > ranking) else ranking
+    except TypeError:
+      ranking = ranking
+
+  ranking = ranking + 1
+
+  new_entry = {
+    'ranking' : ranking,
+    'question' : question,
+    'vec_representation' : vec,
+    'sparql_query' : sparl_query
+  }
+  templatesDict.append(new_entry)
+
+  with open('data/templates.json', 'w+') as templates_json:
+    json.dump(templatesDict,templates_json)
+
+  return "Template saved" + str(new_entry)
+
+@app.route('/ask', methods=['POST'])
 def get_question():
-    if not request.json or not 'question' in request.json:
-        abort(400)
-    question = request.json['question']
-    # extract the entity
-    entity = ner.extract_entity_question (question)
-    # print entity
-    newQuestion = ner.replace_entity_name(question, entity)
+  if not request.json or not 'question' in request.json:
+      abort(400)
+  question = request.json['question']
+  # extract the entity
+  entity = ner.extract_entity_question (question)
+  newQuestion = ner.replace_entity_name(question, entity)
 
-    # search the URI of the entity
-    uriEntity = es.search(index=indexName, body={
-      'query': {
-        'match': {
-          'label': entity[0],
-         }
-      }
-    })
-    return exampleQueryFuseki(question, uriEntity["hits"]["hits"][0]["_source"]["uri"])
-    
+  # search the URI of the entity
+  uriEntity = es.search(index=indexName, body={
+    'query': {
+      'match': {
+        'label': entity[0],
+       }
+    }
+  })
+
+  # Integration
+  jsonTemplate = ranking(newQuestion)
+  return queryFuseki(question, uriEntity["hits"]["hits"][0]["_source"]["uri"],jsonTemplate)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000, debug=True)
+  model = FastText.load_fasttext_format('/home/eis/wiki_en/wiki.en.bin')
+  app.run(host='0.0.0.0', port=8000, debug=True)

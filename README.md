@@ -16,7 +16,8 @@
 	- The server starts at `http://localhost:3030/`
 - Create a virtual environment for Python 2.7 ```$ virtualenv pythenv --python=python2  ```
 	- Run the virtual environment ```$ source pythenv/bin/activate```
-	- Install the dependencies ```$ pip install elasticsearch SPARQLWrapper simplejson gensim pandas flask nltk```
+	- Install the dependencies ```$ pip install elasticsearch SPARQLWrapper simplejson gensim pandas flask nltk ```
+		```pip install -U scikit-learn```
 - Run ```$ python IndexSDAKG.py ``` to import all the entities and labels of the KG to ElasticSearch (This is needed only when the KG is being updated or it is the first time).
 - Run ```$ python searchSDAES.py ``` to search and get a response 
 - Download [wiki-en.bin fasttext](https://s3-us-west-1.amazonaws.com/fasttext-vectors/wiki.en.zip)
@@ -64,4 +65,5 @@ $ python app.py
 ```
 
 Example request API:
-curl -i -H "Content-Type: application/json" -X POST -d '{"question":"Where is SDA?"}' http://localhost:8000/getquestion
+```sh
+$ curl -i -H "Content-Type: application/json" -X POST -d '{"question":"Where is SDA?"}' http://localhost:8000/ask```
