@@ -76,7 +76,7 @@ def queryFuseki (question, uri, jsonTemplate):
   flag = False
   for item in json.loads(jsonTemplate):
     sparqlQuery = item['sparql_query'] % uri
-    sparql.setQuery(query)
+    sparql.setQuery(sparqlQuery)
     sparql.setReturnFormat(JSON)
     results = sparql.query().convert()
     # print results
