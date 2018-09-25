@@ -164,5 +164,5 @@ def get_question():
   return queryFuseki(question, uriEntity["hits"]["hits"][0]["_source"]["uri"],jsonTemplate)
 
 if __name__ == '__main__':
-  model = FastText.load_fasttext_format('/home/eis/wiki_en/wiki.en.bin')
+  model = FastText.load_fasttext_format('data/wiki.en.bin')
   app.run(host='0.0.0.0', port=8000, debug=True)
