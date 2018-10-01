@@ -22,7 +22,7 @@
 	- Move the wiki.en.bin file into the data folder of the project.
 - If there is not data of nltk uncomment the lines 8 - 11 in nerQuestion.py
 
-If there is not data of nltk uncomment the lines 8 - 11 in nerQuestion.py
+If there is no data of nltk uncomment the lines 8 - 11 in nerQuestion.py
 
 ## Run Server:
 To run the server

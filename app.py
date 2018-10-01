@@ -80,10 +80,23 @@ def queryFuseki (question, uri, jsonTemplate):
     sparql.setReturnFormat(JSON)
     results = sparql.query().convert()
     # print results
-    if results["results"]["bindings"]:
+    if results.get('boolean'):
       json_results = {
         'question': question,
-        'response': results["results"]["bindings"][0]["x"]["value"]
+        'response': results["boolean"]
+      }
+      flag = True
+      break
+    elif results["results"]["bindings"]:
+      r = ""
+      for item in results["results"]["bindings"]:
+        if r == "":
+          r = item["x"]["value"]
+        else:
+          r = r + ", " + item["x"]["value"]
+      json_results = {
+        'question': question,
+        'response': r
       }
       flag = True
       break
@@ -96,6 +109,7 @@ def queryFuseki (question, uri, jsonTemplate):
       'question': question,
       'response': "No results found"
     }
+    # resutl in json
     return json.dumps(json_results)
 app = Flask(__name__)
 
@@ -164,5 +178,5 @@ def get_question():
   return queryFuseki(question, uriEntity["hits"]["hits"][0]["_source"]["uri"],jsonTemplate)
 
 if __name__ == '__main__':
-  model = FastText.load_fasttext_format('data/wiki.en.bin')
+  model = FastText.load_fasttext_format('/home/eis/wiki_en/wiki.en.bin')
   app.run(host='0.0.0.0', port=8000, debug=True)

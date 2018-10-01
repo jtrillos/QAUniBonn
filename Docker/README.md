@@ -13,7 +13,7 @@
 - Run ```$ python IndexSDAKG.py ``` to import all the entities and labels of the KG to ElasticSearch (This is needed only when the KG is being updated or it is the first time).
 - Download [wiki-en.bin fasttext](https://s3-us-west-1.amazonaws.com/fasttext-vectors/wiki.en.zip)
 	- Move the wiki.en.bin file into the data folder of the project.
-- If there is not data of nltk uncomment the lines 8 - 11 in nerQuestion.py
+- If there is no data of nltk uncomment the lines 8 - 11 in nerQuestion.py
 
 ## Start Fuseki Server Docker
 - Pull Docker Fuseki Server 
