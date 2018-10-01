@@ -1,0 +1,46 @@
+swagger: "2.0"
+info:
+  description: "This is the API documentation of project HSP kommunikationsroboter."
+  version: "1.0.0"
+  title: "Project-HSP-Kommunikationsroboter"
+  termsOfService: "http://swagger.io/terms/"
+host: "<HOST_IP>:8000"
+schemes:
+- "http"
+paths:
+  /ask:
+    post:
+      summary: "Ask a question and return an answer."
+      operationId: ask
+      consumes: 
+        - application/json
+      produces: 
+        - application/json
+      parameters: 
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/input'
+      responses:
+        500:
+          description: Internal Server Error
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              question:
+                type: string
+              response:
+                type: string
+definitions:
+  input:
+    type: object
+    properties:
+      question:
+        type: string
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
+          
