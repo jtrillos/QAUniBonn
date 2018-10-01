@@ -24,7 +24,7 @@
 
 If there is not data of nltk uncomment the lines 8 - 11 in nerQuestion.py
 
-##Run Server:
+## Run Server:
 To run the server
 ```sh
 $ python app.py
@@ -35,7 +35,7 @@ To run the server in background
 $ nohup python app.py &
 ```
 
-##Example request API:
+## Example request API:
 ```sh
 $ curl -i -H "Content-Type: application/json" -X POST -d '{"question":"Where is SDA?"}' http://localhost:8000/ask
 ```

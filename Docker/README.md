@@ -40,7 +40,7 @@ If server does not connect with the container of ElasticSearch
 $ docker run -d --name qaunibonn_elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.3.2
 ```
 
-##Run Server:
+## Run Server:
 To run the server
 ```sh
 $ python app.py
@@ -51,7 +51,7 @@ To run the server in background
 $ nohup python app.py &
 ```
 
-##Example request API:
+## Example request API:
 ```sh
 $ curl -i -H "Content-Type: application/json" -X POST -d '{"question":"Where is SDA?"}' http://localhost:8000/ask
 ```
