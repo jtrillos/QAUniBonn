@@ -63,6 +63,8 @@ def ranking(question):
       for i in range(n):
         templatesDict[i]['ranking'] = sims[0][i]
 
+      # sort temaplates by ranking
+      templatesDict = sorted(templatesDict, key=sort_by_ranking, reverse=True)
       #print("sims_index computed")
       #print(str(sims_index))
 
@@ -70,6 +72,12 @@ def ranking(question):
     except ValueError:
       print("error")
       return {'err' : 'No templates found'}
+
+def sort_by_ranking(d):
+  try:
+      return float(d['ranking'])
+  except KeyError:
+      return 0
 
 # Given a query question, uri and a jsonTemplate returns the answer
 def queryFuseki (question, uri, jsonTemplate):
