@@ -9,7 +9,7 @@
 - Create a virtual environment for Python 2.7 ```$ virtualenv pythenv --python=python2  ```
 	- Run the virtual environment ```$ source pythenv/bin/activate```
 	- Install the dependencies ```$ pip install elasticsearch SPARQLWrapper simplejson gensim pandas flask nltk ```
-		```pip install -U scikit-learn```
+		```$ pip install -U scikit-learn```
 - Run ```$ python IndexSDAKG.py ``` to import all the entities and labels of the KG to ElasticSearch (This is needed only when the KG is being updated or it is the first time).
 - Download [wiki-en.bin fasttext](https://s3-us-west-1.amazonaws.com/fasttext-vectors/wiki.en.zip)
 	- Move the wiki.en.bin file into the data folder of the project.
@@ -26,7 +26,7 @@ $ docker run -d --name qaunibonn_fuseki -p 3030:3030 -e ADMIN_PASSWORD=robot -v 
 ```
 
 ## Start ElasticSearch Server Docker
-- Pull Docker Fuseki Server 
+- Pull Docker ElasticSearch Server
 ```sh
 $ docker pull docker.elastic.co/elasticsearch/elasticsearch:6.3.2
 ```
@@ -35,7 +35,7 @@ $ docker pull docker.elastic.co/elasticsearch/elasticsearch:6.3.2
 $ docker run -d  --name elasticsearch -e transport.host=0.0.0.0 -e cluster.name=elasticsearch -e http.host=0.0.0.0 -e xpack.security.enabled=false -it docker.elastic.co/elasticsearch/elasticsearch:6.3.2
 ```
 
-If server does not connect with the container of ElasticSearch
+If server does not connect with the container of ElasticSearch Server
 ```sh
 $ docker run -d --name qaunibonn_elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.3.2
 ```
